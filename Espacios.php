@@ -30,8 +30,8 @@
             <!--<li><a href="#">Servicios</a></li>-->
             <li><a href="Productos.php">Productos</a></li>
             <li><a href="Talleres.php">Talleres</a></li>
-            <li class="active"><a href="#">Terapias</a></li>
-            <li><a href="Espacios.php">Espacios</a></li>
+            <li><a href="#">Terapias</a></li>
+            <li class="active"><a href="Espacios.php">Espacios</a></li>
             <!--Menú desplegable-->
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
@@ -88,7 +88,7 @@
 
       <!--Seccion 1-->
       <div class="section">
-        <h3 class="center">Nuestros terapias</h3>
+        <h3 class="center">Nuestros Espacios</h3>
         <div class="row">
           <div class="col l7 s10 offset-l3 offset-s1">
             <div class="nav-wrapper">

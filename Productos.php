@@ -34,7 +34,7 @@
             <li class="active"><a href="#">Productos</a></li>
             <li><a href="Talleres.php">Talleres</a></li>
             <li><a href="Terapias.php">Terapias</a></li>
-            <li><a href="Renta de espacios.php">Espacios</a></li>
+            <li><a href="Espacios.php">Espacios</a></li>
             <!--Menú desplegable-->
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
