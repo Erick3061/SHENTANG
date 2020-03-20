@@ -33,9 +33,10 @@
           <ul class="right hide-on-med-and-down">
             <!--<li><a href="#">Servicios</a></li>-->
             <li class="active"><a href="#">Productos</a></li>
-            <li><a href="Talleres.php">Talleres</a></li>
+            <li><a href="index.php">Pagina principal</a></li>
+            <!-- <li><a href="Talleres.php">Talleres</a></li>
             <li><a href="Terapias.php">Terapias</a></li>
-            <li><a href="Espacios.php">Espacios</a></li>
+            <li><a href="Espacios.php">Espacios</a></li> -->
             <!--Menú desplegable-->
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
@@ -66,9 +67,9 @@
             <!-- Contenido del menu movil-->
             <li class="active"><a href="#">Productos</a></li>
             <!--<li><div class="divider"></div></li>-->
-            <li><a href="Talleres.php">Talleres</a></li>
+            <!-- <li><a href="Talleres.php">Talleres</a></li>
             <li><a href="Terapias.php">Terapias</a></li>
-            <li><a href="Espacios.php">Espacios</a></li>
+            <li><a href="Espacios.php">Espacios</a></li> -->
             <!--Menú desplegable-->
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop2">
@@ -152,17 +153,17 @@
                             echo "</div>";
                             
                             echo "<div class='card-content' >";
-                              echo "<span class='card-title activator grey-text text-darken-4'>$nomp<i class='material-icons right'>more_vert</i></span>";
-                              echo "<p><a href='producto.php?idproducto=$id'>Ver producto</a></p>";
+                              echo "<span class='card-title activator grey-text text-darken-4'><a href='producto.php?idproducto=$id'>$nomp</a><i class='material-icons right'>more_vert</i></span>";
+                              // echo "<p><a href='producto.php?idproducto=$id'>Ver producto</a></p>";
                               echo "</div>";
                            
                             echo "</form>";
                             echo "<div class='card-reveal'>";
-                              echo "<span class='card-title grey-text text-darken-4'>$nomp<i class='material-icons right'>close</i></span>";
-                              echo "<p class='blue-text text-darken-2 flow-textx'>INFORMACION BASICA DEL PRODUCTO</p>";
+                              echo "<span style='font-weight: bold' class='card-title black-text text-darken-4 flow-textx'>$nomp<i class='material-icons right'>close</i></span>";
+                              echo "<p style='font-weight: bold' class='green-text text-darken-2 flow-textx'>INFORMACION BASICA DEL PRODUCTO</p>";
                               echo "<p>Cantidad: $catp</p>";
                               echo "<p>Tipo de producto: $presen</p>";
-                              echo "<p>Precio: $costo</p>";
+                              echo "<p>Precio: $$costo MX</p>";
                               echo "<p>Marca: $marca</p>";
                               echo "<p>Modelo: $mod</p>";
                             echo "</div>";

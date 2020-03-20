@@ -3,7 +3,6 @@
     <head>
       <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
             
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -21,8 +20,8 @@
       <!-- Menú de navegación-->
       <nav class="green">
         <div class="nav-wrapper container">
-          <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="responsive-img" src="Imagenes/logop.png"></a>
-          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
+          <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="circle responsive-img" src="Imagenes/logop.png"></a>
+          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="circle responsive-img" src="Imagenes/logop1.png"></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
@@ -32,7 +31,7 @@
             <li><a href="Productos.php">Productos</a></li>
             <li><a href="servicios.php">Servicios</a></li>
             <li><a href="#">Iniciar sesion</a></li>
-            <li><a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Crea una cuenta</a></li>
+            
             <!-- <li><a href="Talleres.php">Talleres</a></li> -->
             <!-- <li><a href="Terapias.php">Terapias</a></li> -->
             <!-- <li><a href="Espacios.php">Espacios</a></li> -->
@@ -65,9 +64,10 @@
             </li>
             <!-- Contenido del menu movil-->
             <li><a href="Productos.php">Productos</a></li>
+            <li><a href="servicios.php">Servicios</a></li>
             <!--<li><div class="divider"></div></li>-->
-            <!-- <li><a href="Talleres.php">Talleres</a></li> -->
-            <!-- <li><a href="Terapias.php">Terapias</a></li> -->
+            <li><a href="#">Iniciar sesion</a></li>
+            
             <!-- <li><a href="Espacios.php">Espacios</a></li> -->
             <!--Menú desplegable-->
             <li>
@@ -90,24 +90,9 @@
       </nav>
       <!--Termino del menú de navegacion-->
 
-      <div class="section">
-        <div class="container">
-        <div class="row">
-          <div class="col 19 s12">
-            <div class="slider">
-              <ul class="slides container">
-                <li>
-                  <img class="responsive-img container" src="Imagenes/EQUIPO.jpg" alt="">
-                </li>
-                <li>
-                  <img class="responsive-img container" src="Imagenes/PORTADA.jpg" alt="">
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
+     <div class="section container">
+          <img class="responsive-img" src="Imagenes/EQUIPO.jpg" alt="">
+     </div>
       <!--Bola flotante
       <div class="fixed-action-btn">
         <a class="btn-floating btn-large blue">
@@ -182,5 +167,5 @@
         
         
       </script>
-    </body>
+      </body>
   </html>

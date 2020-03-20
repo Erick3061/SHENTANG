@@ -153,7 +153,7 @@
             <?php
               echo "<p>Cantidad: $catp</p>";
               echo "<p>Tipo de producto: $presen</p>";
-              echo "<p>Precio: $costo</p>";
+              echo "<p>Precio: $$costo MX</p>";
               echo "<p>Marca: $marca</p>";
               echo "<p>Modelo: $mod</p>";
             ?>
@@ -168,7 +168,7 @@
             <?php
               echo "<p>Cantidad: $catp</p>";
               echo "<p>Tipo de producto: $presen</p>";
-              echo "<p>Precio: $costo</p>";
+              echo "<p>Precio: $$costo MX</p>";
               echo "<p>Marca: $marca</p>";
               echo "<p>Modelo: $mod</p>";
             ?>

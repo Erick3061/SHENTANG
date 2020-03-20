@@ -103,33 +103,29 @@
                 
             }
       ?>
-      <div class="section">
-        <div class="row">
-        </div>
-        <div class="row">
-          <div class="col l9 s12">
-
-            <div class="slider">
-              <ul class="slides">
-
-                <li>
-                  <img src="Imagenes/p1.jpg" alt="">
-                  <div class="caption center-align">
-                    <h3>Hola</h3>
-                  </div>
-                </li>
-                <li>
-                  <img src="Imagenes/p2.jpg" alt="">
-                </li>
-                <li>
-                  <img src="Imagenes/p3.jpg" alt="">
-                </li>
-              </ul>
-
-            </div>
-          </div>
-        </div>
+      
+      <div class="section container ">
+              <img class="responsive-img" src="Imagenes/SERVICIOS/SERVICIOS.jpg" alt="">
       </div>
+      
+      <!-- <div class="carousel carousel-slider center">
+    <div class="carousel-item red white-text" href="#one!">
+      <img src="Imagenes/SERVICIOS/SERVICIOS.jpg" alt="">
+      <p class="white-text">This is your first panel</p>
+    </div>
+    <div class="carousel-item amber white-text" href="#two!">
+      <h2>Second Panel</h2>
+      <p class="white-text">This is your second panel</p>
+    </div>
+    <div class="carousel-item green white-text" href="#three!">
+      <h2>Third Panel</h2>
+      <p class="white-text">This is your third panel</p>
+    </div>
+    <div class="carousel-item blue white-text" href="#four!">
+      <h2>Fourth Panel</h2>
+      <p class="white-text">This is your fourth panel</p>
+    </div>
+  </div> -->
       <!--Bola flotante
       <div class="fixed-action-btn">
         <a class="btn-floating btn-large blue">
