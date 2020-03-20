@@ -24,7 +24,8 @@
       <!-- Menú de navegación-->
       <nav class="green">
         <div class="nav-wrapper container">
-          <a href="index.php" class="brand-logo">Logo</a>
+        <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="responsive-img" src="Imagenes/logop.png"></a>
+          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
@@ -48,7 +49,7 @@
             <li>
               <div class="user-view">
                 <div class="background">
-                  <img src="Imagenes/1.jpg" alt="">
+                  <img src="Imagenes/p2.jpg" alt="">
                 </div>
                 <!--En caso de usuarios inscritos (Muestra datos del usuario)-->
                 <!--<a href="#" >
@@ -58,7 +59,7 @@
                   <span class="name white-text">Eduardo</span>
                 </a>-->
                 <a href="">
-                  <span class="email white-text">Shen-Tang(Logo)</span>
+                <a href="index.php" class="col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
                 </a>
               </div>
             </li>
@@ -138,6 +139,9 @@
                           $catp=$fila[2];
                           $presen=$fila[3];
                           $costo=$fila[4];
+                          $marca=$fila[5];
+                          $mod=$fila[6];
+                          $caract=$fila[7];
                           //echo $nomp;
                         //}
                         // <!--Listado de los productos-->
@@ -155,10 +159,12 @@
                             echo "</form>";
                             echo "<div class='card-reveal'>";
                               echo "<span class='card-title grey-text text-darken-4'>$nomp<i class='material-icons right'>close</i></span>";
-                              echo "<p>INFORMACION BASICA DEL PRODUCTO</p>";
+                              echo "<p class='blue-text text-darken-2 flow-textx'>INFORMACION BASICA DEL PRODUCTO</p>";
                               echo "<p>Cantidad: $catp</p>";
-                              echo "<p>Presentacion: $presen</p>";
+                              echo "<p>Tipo de producto: $presen</p>";
                               echo "<p>Precio: $costo</p>";
+                              echo "<p>Marca: $marca</p>";
+                              echo "<p>Modelo: $mod</p>";
                             echo "</div>";
                           echo "</div>";
                         echo "</div>";

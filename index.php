@@ -21,7 +21,8 @@
       <!-- Menú de navegación-->
       <nav class="green">
         <div class="nav-wrapper container">
-          <a href="#" class="brand-logo">Logo</a>
+          <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="responsive-img" src="Imagenes/logop.png"></a>
+          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
@@ -29,9 +30,12 @@
           <ul class="right hide-on-med-and-down">
             <!--<li><a href="#">Servicios</a></li>-->
             <li><a href="Productos.php">Productos</a></li>
-            <li><a href="Talleres.php">Talleres</a></li>
-            <li><a href="Terapias.php">Terapias</a></li>
-            <li><a href="Espacios.php">Espacios</a></li>
+            <li><a href="servicios.php">Servicios</a></li>
+            <li><a href="#">Iniciar sesion</a></li>
+            <li><a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Crea una cuenta</a></li>
+            <!-- <li><a href="Talleres.php">Talleres</a></li> -->
+            <!-- <li><a href="Terapias.php">Terapias</a></li> -->
+            <!-- <li><a href="Espacios.php">Espacios</a></li> -->
             <!--Menú desplegable-->
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
@@ -45,7 +49,7 @@
             <li>
               <div class="user-view">
                 <div class="background">
-                  <img src="Imagenes/1.jpg" alt="">
+                  <img src="Imagenes/p2.jpg">
                 </div>
                 <!--En caso de usuarios inscritos (Muestra datos del usuario)-->
                 <!--<a href="#" >
@@ -55,16 +59,16 @@
                   <span class="name white-text">Eduardo</span>
                 </a>-->
                 <a href="">
-                  <span class="email white-text">Shen-Tang(Logo)</span>
+                <a href="index.php" class="col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
                 </a>
               </div>
             </li>
             <!-- Contenido del menu movil-->
             <li><a href="Productos.php">Productos</a></li>
             <!--<li><div class="divider"></div></li>-->
-            <li><a href="Talleres.php">Talleres</a></li>
-            <li><a href="Terapias.php">Terapias</a></li>
-            <li><a href="Espacios.php">Espacios</a></li>
+            <!-- <li><a href="Talleres.php">Talleres</a></li> -->
+            <!-- <li><a href="Terapias.php">Terapias</a></li> -->
+            <!-- <li><a href="Espacios.php">Espacios</a></li> -->
             <!--Menú desplegable-->
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop2">
@@ -87,7 +91,22 @@
       <!--Termino del menú de navegacion-->
 
       <div class="section">
-
+        <div class="container">
+        <div class="row">
+          <div class="col 19 s12">
+            <div class="slider">
+              <ul class="slides container">
+                <li>
+                  <img class="responsive-img container" src="Imagenes/EQUIPO.jpg" alt="">
+                </li>
+                <li>
+                  <img class="responsive-img container" src="Imagenes/PORTADA.jpg" alt="">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
       <!--Bola flotante
       <div class="fixed-action-btn">
@@ -154,6 +173,13 @@
         document.addEventListener('DOMContentLoaded', function(){
           M.AutoInit();
         });
+        document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.slider');
+          var instances = M.Slider.init(elems,{
+            interval:3000
+          });
+        });
+        
         
       </script>
     </body>

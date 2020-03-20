@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
     <head>
       <!-- Compiled and minified CSS -->
@@ -15,7 +15,6 @@
 
     <body>
     <?php
-      $idproducto=$_GET["idproducto"];
       //echo "$idproducto";
       require ("conexiondb.php");
     ?>
@@ -31,8 +30,8 @@
           </a>
           <!--Menu normal-->
           <ul class="right hide-on-med-and-down">
-            <li><a href="servicios.php">Servicios</a></li>
-            <li><a href="Productos.php">Productos</a></li>
+            <li class="active"><a href="#">Servicios</a></li>
+            <li><a href="index.php">Pagina principal</a></li>
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
               Nosotros
@@ -55,20 +54,19 @@
                 </a>-->
                 <a href="">
                 <a href="index.php" class="col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
-
                 </a>
               </div>
             </li>
             <li>
-              <a href="Productos.php">
-                Productos
+              <a href="index.php">
+                Pagina principal
               </a>
             </li>
             <li>
               <div class="divider"></div>
             </li>
-            <li>
-              <a href="">
+            <li class="active">
+              <a href="#">
                 Servicios
               </a>
             </li>
@@ -102,30 +100,11 @@
             echo "error al conectar a la base de datos <br>";
             exit();
             }else{
-                mysqli_select_db($conexion,$db_nomdb) or die ("NO SE ENCUENTRA LA BASE DE DATOS");
-                /* para que reconozca los acentos y juegos de caracteres */
-                mysqli_set_charset($conexion,"utf8");
-                $consulta="select * from productos where IDP='$idproducto'";
-                $resultado=mysqli_query($conexion, $consulta);
-                $fila=mysqli_fetch_row($resultado);
-                $id=$fila[0];
-                $nomp=$fila[1];
-                $catp=$fila[2];
-                $presen=$fila[3];
-                $costo=$fila[4];
-                $marca=$fila[5];
-                $mod=$fila[6];
-                $caract=$fila[7];
+                
             }
       ?>
       <div class="section">
         <div class="row">
-          <div class="col s12">
-            <?php
-            echo "<h2>$nomp</h2>";
-            ?>
-          </div>
-          
         </div>
         <div class="row">
           <div class="col l9 s12">
@@ -148,30 +127,6 @@
               </ul>
 
             </div>
-          </div>
-          <div class="col l3 hide-on-med-and-down">
-            <?php
-              echo "<p>Cantidad: $catp</p>";
-              echo "<p>Tipo de producto: $presen</p>";
-              echo "<p>Precio: $costo</p>";
-              echo "<p>Marca: $marca</p>";
-              echo "<p>Modelo: $mod</p>";
-            ?>
-          </div>
-          <div class="col s12">
-            <p style="font-weight: bold">Descripcion</p>
-            <?php
-              echo "<p style='font-weight: bold'>$caract</p>";
-            ?> 
-          </div>
-          <div class="col l2 hide-on-large-only">
-            <?php
-              echo "<p>Cantidad: $catp</p>";
-              echo "<p>Tipo de producto: $presen</p>";
-              echo "<p>Precio: $costo</p>";
-              echo "<p>Marca: $marca</p>";
-              echo "<p>Modelo: $mod</p>";
-            ?>
           </div>
         </div>
       </div>

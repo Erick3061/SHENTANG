@@ -21,7 +21,8 @@
       <!-- Menú de navegación-->
       <nav class="green">
         <div class="nav-wrapper container">
-          <a href="index.php" class="brand-logo">Logo</a>
+        <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="responsive-img" src="Imagenes/logop.png"></a>
+          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
@@ -45,7 +46,7 @@
             <li>
               <div class="user-view">
                 <div class="background">
-                  <img src="Imagenes/1.jpg" alt="">
+                  <img src="Imagenes/p2.jpg" alt="">
                 </div>
                 <!--En caso de usuarios inscritos (Muestra datos del usuario)-->
                 <!--<a href="#" >
@@ -55,7 +56,7 @@
                   <span class="name white-text">Eduardo</span>
                 </a>-->
                 <a href="">
-                  <span class="email white-text">Shen-Tang(Logo)</span>
+                <a href="index.php" class="col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
                 </a>
               </div>
             </li>
