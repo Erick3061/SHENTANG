@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
     <head>
       <!-- Compiled and minified CSS -->
@@ -27,14 +27,8 @@
           </a>
           <!--Menu para ordenadores de resolcuion grande-->
           <ul class="right hide-on-med-and-down">
-            <!--<li><a href="#">Servicios</a></li>-->
-            <li><a href="Productos.php">Productos</a></li>
-            <li><a href="servicios.php">Servicios</a></li>
-            <li><a href="login.php">Iniciar sesion</a></li>
-            
-            <!-- <li><a href="Talleres.php">Talleres</a></li> -->
-            <!-- <li><a href="Terapias.php">Terapias</a></li> -->
-            <!-- <li><a href="Espacios.php">Espacios</a></li> -->
+            <li><a href="index.php">Pagina Principal</a></li>
+            <li class="active"><a href="#">Crear cuenta</a></li>
             <!--Menú desplegable-->
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
@@ -63,12 +57,8 @@
               </div>
             </li>
             <!-- Contenido del menu movil-->
-            <li><a href="Productos.php">Productos</a></li>
-            <li><a href="servicios.php">Servicios</a></li>
-            <!--<li><div class="divider"></div></li>-->
-            <li><a href="login.php">Iniciar sesion</a></li>
-            
-            <!-- <li><a href="Espacios.php">Espacios</a></li> -->
+            <li><a href="index.php">Pagina Principal</a></li>
+            <li class="active"><a href="#">Crear cuenta</a></li>
             <!--Menú desplegable-->
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop2">
@@ -91,9 +81,108 @@
       <!--Termino del menú de navegacion-->
 
      <div class="section container">
-          <img class="responsive-img" src="Imagenes/EQUIPO.jpg" alt="">
+         <!-- <table class="red"> -->
+            <div class="row">
+                <!-- formulario en moviles -->
+                <form class="col s12 show-on-small hide-on-large-only" action="#">
+                <div class="row">
+                    <div class="container col s4 offset-s4">
+                        <img class="responsive-img" src="Imagenes/2.jpg" alt="">
+                    </div>
+                    <div class="col s12 section">
+                        <p>
+                            
+                        </p>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Nombre" id="nombre" type="text" class="validate">
+                        <label for="nombre">NOMBRE</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Apellido" id="apellido" type="text" class="validate">
+                        <label for="apellido">APELLIDO</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Edad" id="edad" type="text" class="validate">
+                        <label for="edad">EDAD</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Fecha de Nacimiento" id="fecha" type="date" class="validate">
+                        <label for="fecha">FECHA DE NACIMIENTO</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Contraseña" id="password" type="password" class="validate">
+                        <label for="contraseña">CONTRASEÑA</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="email" id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field center">
+                        <input class="waves-effect waves-light btn" type="submit" value="ENVIAR">
+                    </div>
+                </div>
+                </form>
+                <!-- formulario en desktop y tabletas -->
+                <form class="col s8 offset-s2 show-on-large hide-on-med-and-down" action="#">
+                <div class="row">
+                    <div class="container col s4 offset-s4">
+                        <img class="responsive-img" src="Imagenes/2.jpg" alt="">
+                    </div>
+                    <div class="col s12 section">
+                        <p>
+                            
+                        </p>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Nombre" id="nombre" type="text" class="validate">
+                        <label for="nombre">NOMBRE</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Apellido" id="apellido" type="text" class="validate">
+                        <label for="apellido">APELLIDO</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Edad" id="edad" type="text" class="validate">
+                        <label for="edad">EDAD</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Fecha de Nacimiento" id="fecha" type="date" class="validate">
+                        <label for="fecha">FECHA DE NACIMIENTO</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Contraseña" id="password" type="password" class="validate">
+                        <label for="contraseña">CONTRASEÑA</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="email" id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field center">
+                        <input class="waves-effect waves-light btn" type="submit" value="ENVIAR">
+                    </div>
+                </div>
+                </form>
+            </div>
+         <!-- </table> -->
      </div>
-      <!--Bola flotante
+      <!-- Bola flotante
       <div class="fixed-action-btn">
         <a class="btn-floating btn-large blue">
           <i class="large material-icons">mode_edit</i>
@@ -104,7 +193,7 @@
           <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
           <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
         </ul>
-      </div>-->
+      </div> -->
 
       <footer class="page-footer green">
           <div class="container">
@@ -132,7 +221,7 @@
                   </li>
                 </ul>
               </div>
-              <!--<div class="col l4 offset-l2 s12">
+              <!-- <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
@@ -140,7 +229,7 @@
                   <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
                 </ul>
-              </div>-->
+              </div> -->
             </div>
           </div>
           <div class="footer-copyright center">
