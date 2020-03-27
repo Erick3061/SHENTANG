@@ -84,7 +84,7 @@
          <!-- <table class="red"> -->
             <div class="row">
                 <!-- formulario en moviles -->
-                <form class="col s12 show-on-small hide-on-large-only" action="#">
+                <form class="col s12 show-on-small hide-on-large-only" action="insertu.php" method="POST" name="fvalida1">
                 <div class="row">
                     <div class="container col s4 offset-s4">
                         <img class="responsive-img" src="Imagenes/2.jpg" alt="">
@@ -95,44 +95,44 @@
                         </p>
                     </div>
                     <div class="input-field col s6">
-                        <input placeholder="Nombre" id="nombre" type="text" class="validate">
+                        <input placeholder="Nombre" id="nombre" type="text" class="validate" name="nombre">
                         <label for="nombre">NOMBRE</label>
                     </div>
                     <div class="input-field col s6">
-                        <input placeholder="Apellido" id="apellido" type="text" class="validate">
-                        <label for="apellido">APELLIDO</label>
+                        <input placeholder="Apellidos" id="apellidos" type="text" class="validate" name="apellidos">
+                        <label for="apellidos">APELLIDOS</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input placeholder="Edad" id="edad" type="text" class="validate">
-                        <label for="edad">EDAD</label>
+                        <input placeholder="Usuario" id="usuario" type="text" class="validate" name="usuario">
+                        <label for="user">USUARIO</label>
                     </div>
-                    <div class="input-field col s6">
+                    <!-- <div class="input-field col s6">
                         <input placeholder="Fecha de Nacimiento" id="fecha" type="date" class="validate">
                         <label for="fecha">FECHA DE NACIMIENTO</label>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Contraseña" id="password" type="password" class="validate">
+                        <input placeholder="Contraseña" id="password" type="password" class="validate" name="contraseña">
                         <label for="contraseña">CONTRASEÑA</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="email" id="email" type="email" class="validate">
+                        <input placeholder="email" id="email" type="email" class="validate" name="email">
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field center">
-                        <input class="waves-effect waves-light btn" type="submit" value="ENVIAR">
+                        <input class="waves-effect waves-light btn" type="submit" value="ENVIAR" id="enviar" name="enviar"> 
                     </div>
                 </div>
                 </form>
                 <!-- formulario en desktop y tabletas -->
-                <form class="col s8 offset-s2 show-on-large hide-on-med-and-down" action="#">
+                <form class="col s8 offset-s2 show-on-large hide-on-med-and-down" action="insertu.php" method="POST" name="fvalida">
                 <div class="row">
                     <div class="container col s4 offset-s4">
                         <img class="responsive-img" src="Imagenes/2.jpg" alt="">
@@ -143,39 +143,39 @@
                         </p>
                     </div>
                     <div class="input-field col s6">
-                        <input placeholder="Nombre" id="nombre" type="text" class="validate">
+                        <input placeholder="Nombre" id="nombre" type="text" class="validate" name="nombre" required>
                         <label for="nombre">NOMBRE</label>
                     </div>
                     <div class="input-field col s6">
-                        <input placeholder="Apellido" id="apellido" type="text" class="validate">
-                        <label for="apellido">APELLIDO</label>
+                        <input placeholder="Apellidos" id="apellidos" type="text" class="validate" name="apellidos" required>
+                        <label for="apellidos">APELLIDOS</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input placeholder="Edad" id="edad" type="text" class="validate">
-                        <label for="edad">EDAD</label>
+                        <input placeholder="Usuario" id="usuario" type="text" class="validate" name="usuario" required>
+                        <label for="usuario">USUARIO</label>
                     </div>
-                    <div class="input-field col s6">
+                   <!--  <div class="input-field col s6">
                         <input placeholder="Fecha de Nacimiento" id="fecha" type="date" class="validate">
                         <label for="fecha">FECHA DE NACIMIENTO</label>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Contraseña" id="password" type="password" class="validate">
+                        <input placeholder="Contraseña" id="password" type="password" class="validate" name="password"required>
                         <label for="contraseña">CONTRASEÑA</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="email" id="email" type="email" class="validate">
+                        <input placeholder="email" id="email" type="email" class="validate" name="email"required>
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field center">
-                        <input class="waves-effect waves-light btn" type="submit" value="ENVIAR">
+                        <input class="waves-effect waves-light btn" type="submit" value="ENVIAR" id="enviar" name="enviar">
                     </div>
                 </div>
                 </form>
@@ -194,7 +194,6 @@
           <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
         </ul>
       </div> -->
-
       <footer class="page-footer green">
           <div class="container">
             <div class="row">
@@ -239,7 +238,19 @@
             </div>
           </div>
         </footer>
-
+      <!-- VALIDAR CAMPOS DEL FORMULARIO -->
+      <script>
+      function validar_formulario(){
+        if (document.fvalida1.nombre.value.length==0){
+      		alert("Tiene que escribir su nombre")
+      		document.fvalida1.nombre.focus()
+      		return 0;
+   	    }
+        
+        alert("Muchas gracias por enviar el formulario");
+   	    document.fvalida1.submit();
+      }
+      </script>
      <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -253,8 +264,7 @@
             interval:3000
           });
         });
-        
-        
       </script>
+      
       </body>
   </html>

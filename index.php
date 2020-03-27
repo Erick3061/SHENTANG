@@ -30,7 +30,7 @@
             <!--<li><a href="#">Servicios</a></li>-->
             <li><a href="Productos.php">Productos</a></li>
             <li><a href="servicios.php">Servicios</a></li>
-            <li><a href="login.php">Iniciar sesion</a></li>
+            <li><a href="#">Iniciar sesion</a></li>
             
             <!-- <li><a href="Talleres.php">Talleres</a></li> -->
             <!-- <li><a href="Terapias.php">Terapias</a></li> -->
@@ -41,6 +41,7 @@
               Nosotros
               <i class="material-icons right">arrow_drop_down</i></a>
             </li>
+            
           </ul>
           <!-- Menu para dispositivos pequeños-->
           <ul class="sidenav" id="menu-side">
@@ -66,7 +67,7 @@
             <li><a href="Productos.php">Productos</a></li>
             <li><a href="servicios.php">Servicios</a></li>
             <!--<li><div class="divider"></div></li>-->
-            <li><a href="login.php">Iniciar sesion</a></li>
+            <li><a href="#">Iniciar sesion</a></li>
             
             <!-- <li><a href="Espacios.php">Espacios</a></li> -->
             <!--Menú desplegable-->
@@ -81,6 +82,7 @@
             <li><a href="#">Mision</a></li>
             <li><a href="#">Vision</a></li>
           </ul>
+          
           <ul id="id_drop2" class="dropdown-content">
             <li><a href="#">¿Quienes somos?</a></li>
             <li><a href="#">Mision</a></li>

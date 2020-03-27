@@ -16,6 +16,7 @@
     <body>
     <?php
       $idproducto=$_GET["idproducto"];
+      $num_pag=$_GET["nump"];
       //echo "$idproducto";
       require ("conexiondb.php");
     ?>
@@ -32,7 +33,7 @@
           <!--Menu normal-->
           <ul class="right hide-on-med-and-down">
             <li><a href="servicios.php">Servicios</a></li>
-            <li><a href="Productos.php">Productos</a></li>
+            <li><a href="Productos.php?pagina=<?php echo $num_pag?>">Productos</a></li>
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
               Nosotros
@@ -97,26 +98,21 @@
       </nav>
       <!-- iniciar con las consultas -->
       <?php
-        $conexion=mysqli_connect($db_host,$db_user,$db_password); 
-          if((mysqli_connect_errno())==true){
-            echo "error al conectar a la base de datos <br>";
-            exit();
-            }else{
-                mysqli_select_db($conexion,$db_nomdb) or die ("NO SE ENCUENTRA LA BASE DE DATOS");
-                /* para que reconozca los acentos y juegos de caracteres */
-                mysqli_set_charset($conexion,"utf8");
-                $consulta="select * from productos where IDP='$idproducto'";
-                $resultado=mysqli_query($conexion, $consulta);
-                $fila=mysqli_fetch_row($resultado);
-                $id=$fila[0];
-                $nomp=$fila[1];
-                $catp=$fila[2];
-                $presen=$fila[3];
-                $costo=$fila[4];
-                $marca=$fila[5];
-                $mod=$fila[6];
-                $caract=$fila[7];
-            }
+        /* CONEXION A BASE DE DATOS CON PDO */
+          /* consulta */
+          $sql="select * from productos where IDP='$idproducto'";
+          /* preparar los metodos */
+          $resultado=$base->prepare($sql);
+          $resultado->execute();
+          $registro=$resultado->fetch(PDO::FETCH_OBJ);
+          $id=$registro->IDP;
+          $nomp=$registro->NOMBRE;
+          $catp=$registro->CANTIDAD;
+          $presen=$registro->TIPO_PRODUCTO;
+          $costo=$registro->PRECIO;
+          $marca=$registro->MARCA;
+          $mod=$registro->MODELO;
+          $caract=$registro->CARACTERISTICAS;
       ?>
       <div class="section">
         <div class="row">
@@ -175,6 +171,9 @@
           </div>
         </div>
       </div>
+      <?php 
+      $base=NULL;
+      ?>
       <!--Bola flotante
       <div class="fixed-action-btn">
         <a class="btn-floating btn-large blue">

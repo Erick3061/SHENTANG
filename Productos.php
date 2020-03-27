@@ -15,6 +15,10 @@
 
     <body>
       <?php
+        /* forzar a que cuando se muestre la pagina de productos sea en la pagina 1 */
+        if(!$_GET){
+          header('Location:Productos.php?pagina=1');
+        }
         require ("conexiondb.php");
       ?>
       <!--<div class="navbar-fixed">
@@ -120,29 +124,45 @@
           
           <!--Columna media (Contenido)-->
           <?php
-          /* CONEXION A BASE DE DATOS CON PROCEDIMIENTOS */
-          $conexion=mysqli_connect($db_host,$db_user,$db_password);
-          
-          if((mysqli_connect_errno())==true){
-              echo "error al conectar a la base de datos <br>";
-              exit();
-              }else{
-                  mysqli_select_db($conexion,$db_nomdb) or die ("NO SE ENCUENTRA LA BASE DE DATOS");
-                  /* para que reconozca los acentos y juegos de caracteres */
-                  mysqli_set_charset($conexion,"utf8");
-                  $consulta="select * from productos";
-                  $resultado=mysqli_query($conexion, $consulta);
-                      echo "<div class='col l10 s12'>";
-                      while(($fila=mysqli_fetch_row($resultado))==true){
+          /* CONEXION A BASE DE DATOS CON PDO */
+          /* consulta */
+          $sql="select * from productos";
+          /* preparar los metodos */
+          $resultado=$base->prepare($sql);
+          $resultado->execute();
+          $ban=true;
+          /* numero de productos por pagina */
+          $productos_x_pagina=6;
+          /* numero de productos en la base de datos */
+          $num_productos_db=$resultado->rowCount();
+          $num_productos_db=$num_productos_db;
+          /* numero de paginas correspondiente al numero de productos de la base de datos */
+          $paginas=$num_productos_db/$productos_x_pagina;
+          $paginas=ceil($paginas);
+          /* variable para iniciar la consulta del rango de la consulta */
+          $inicar=($_GET['pagina']-1)*$productos_x_pagina;
+          /* consulta con base a los productos por pagina */
+          $sql="select * from productos limit :ini,:numpro";
+          /* preparar los metodos */
+          $resultado=$base->prepare($sql);
+          $resultado->bindParam(':ini',$inicar,PDO::PARAM_INT);
+          $resultado->bindParam(':numpro',$productos_x_pagina,PDO::PARAM_INT);
+          $resultado->execute();
+          ?>
+                      <div class="col l10 s12">
+                      <?php    
+                      while($ban==true){
+                        if(($registro=$resultado->fetch(PDO::FETCH_OBJ))==true){
                         //for($i=0;$i<=$tam-1;$i++){      
-                          $id=$fila[0];
-                          $nomp=$fila[1];
-                          $catp=$fila[2];
-                          $presen=$fila[3];
-                          $costo=$fila[4];
-                          $marca=$fila[5];
-                          $mod=$fila[6];
-                          $caract=$fila[7];
+                          $id=$registro->IDP;
+                          $nomp=$registro->NOMBRE;
+                          $catp=$registro->CANTIDAD;
+                          $presen=$registro->TIPO_PRODUCTO;
+                          $costo=$registro->PRECIO;
+                          $marca=$registro->MARCA;
+                          $mod=$registro->MODELO;
+                          $caract=$registro->CARACTERISTICAS;
+                          $numpagina=$_GET['pagina'];
                           //echo $nomp;
                         //}
                         // <!--Listado de los productos-->
@@ -153,10 +173,9 @@
                             echo "</div>";
                             
                             echo "<div class='card-content' >";
-                              echo "<span class='card-title activator grey-text text-darken-4'><a href='producto.php?idproducto=$id'>$nomp</a><i class='material-icons right'>more_vert</i></span>";
+                              echo "<span class='card-title activator grey-text text-darken-4'><a href='producto.php?idproducto=$id&nump=$numpagina'>$nomp</a><i class='material-icons right'>more_vert</i></span>";
                               // echo "<p><a href='producto.php?idproducto=$id'>Ver producto</a></p>";
                               echo "</div>";
-                           
                             echo "</form>";
                             echo "<div class='card-reveal'>";
                               echo "<span style='font-weight: bold' class='card-title black-text text-darken-4 flow-textx'>$nomp<i class='material-icons right'>close</i></span>";
@@ -169,20 +188,40 @@
                             echo "</div>";
                           echo "</div>";
                         echo "</div>";
+                      }else{
+                        $ban=false;
                       }
-                    echo "</div>";
-              }
-              mysqli_close($conexion);
-          ?>
+                      }
+                      /* numero de productos */
+                      echo $resultado->rowCount();
+                      $base=NULL;
+                      ?>
+                    </div>
           <!-- en caso de aside
           <div class="col l2 hide-on-med-and-down">
             
           </div>-->
         </div>
-
       </div>
       <!--Finaliza Seccion1-->
+      <!-- paginacion -->
+      
+      <div class="center-align">
+        <ul class="pagination">
+          <li class="waves-effect <?php echo $_GET['pagina']<=1 ? 'scale-transition scale-out' : 'scale-transition'?>">
+            <a href="Productos.php?pagina=<?php echo $_GET['pagina']-1 ?>">
+            <i class="material-icons">chevron_left</i></a></li>
 
+            <?php for($i=0;$i<$paginas;$i++){ ?>
+              <li class="<?php echo $_GET['pagina']==$i+1 ? 'active' : '' ?>">
+              <a href="Productos.php?pagina=<?php echo $i+1;?>"><?php echo $i+1; ?></a></li>
+            <?php } ?> 
+          
+          <li class="waves-effect <?php echo $_GET['pagina']>=$paginas ? 'scale-transition scale-out' : 'scale-transition'?>">
+            <a href="Productos.php?pagina=<?php echo $_GET['pagina']+1 ?>">
+            <i class="material-icons">chevron_right</i></a></li>
+        </ul> 
+      </div>
 
       <!--Bola flotante
       <div class="fixed-action-btn">
