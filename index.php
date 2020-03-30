@@ -30,7 +30,9 @@
             <!--<li><a href="#">Servicios</a></li>-->
             <li><a href="Productos.php">Productos</a></li>
             <li><a href="servicios.php">Servicios</a></li>
-            <li><a href="#">Iniciar sesion</a></li>
+            <li><a href="#Registro" class="modal-trigger">
+              <span class="white-text">Iniciar Sesion</span>
+            </a></li>
             
             <!-- <li><a href="Talleres.php">Talleres</a></li> -->
             <!-- <li><a href="Terapias.php">Terapias</a></li> -->
@@ -67,7 +69,8 @@
             <li><a href="Productos.php">Productos</a></li>
             <li><a href="servicios.php">Servicios</a></li>
             <!--<li><div class="divider"></div></li>-->
-            <li><a href="#">Iniciar sesion</a></li>
+            <li></li>
+            
             
             <!-- <li><a href="Espacios.php">Espacios</a></li> -->
             <!--Menú desplegable-->
@@ -91,6 +94,77 @@
         </div>
       </nav>
       <!--Termino del menú de navegacion-->
+      <!-- INICIAR SESION -->
+      <div id="Registro" class="modal white z-depth-4">
+        <div class="modal-content">
+          <h5 style="margin-bottom: 10%;" class="center-align">INICIAR SESION</h5>
+          <p class="hide" id="Msg">Hola</p>
+          <form id="formreg" action="#">
+            <div class="input-field">
+              <input type="text" name="nombre" id="nombre" class="validate" required>
+              <label for="nombre">USUARIO</label>
+            </div>
+            <div class="input-field">
+              <input type="password" name="contra" id="contra" class="validate" required>
+              <label for="contra">CONTRASEÑA</label>
+            </div>
+            <div class="row">
+                <a href="#Crearcuenta" class="col s6 modal-close modal-trigger" >Crear cuenta</a>
+                <a href="#" class="col s6 right-align">Olvide mi contraseña</a>
+            </div>
+            <div class="center-align"> 
+              <button class="btn-large waves-effect waves-ligth green" style="width: 30%; border-radius: 40px;" type="submit" id="btnreg">
+                INICIAR SESION
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
+        </div>
+      </div>
+
+      <!-- CREAR USUARIO -->
+      <div id="Crearcuenta" class="modal white z-depth-4">
+        <div class="modal-content">
+          <h5 style="margin-bottom: 10%;" class="center-align">CREAR CUENTA</h5>
+          <p class="hide" id="Msg">Hola</p>
+          <form id="formreg" action="#">
+            <div class="input-field">
+              <input type="text" name="nombre" id="nombre" class="validate" required>
+              <label for="nombre">NOMBRE</label>
+            </div>
+            <div class="input-field">
+              <input type="text" name="ap" id="ap" class="validate" required>
+              <label for="nombre">APELLIDO</label>
+            </div>
+            <div class="input-field">
+              <input type="text" name="usr" id="usr" class="validate" required>
+              <label for="nombre">USUARIO</label>
+            </div>
+            <div class="input-field">
+              <input type="password" name="contra" id="contra" class="validate" required>
+              <label for="contra">CONTRASEÑA</label>
+            </div>
+            <div class="input-field">
+              <input type="email" name="email" id="email" class="validate" required>
+              <label for="nombre">EMAIL</label>
+            </div>
+            <div class="input-field">
+              <input type="text" name="tel" id="tel" class="validate" required>
+              <label for="nombre">TELEFONO</label>
+            </div>
+            <div class="center-align"> 
+              <button class="btn-large waves-effect waves-ligth green" style="width: 30%; border-radius: 40px;" type="submit" id="btnreg">
+                CREAR CUANTA
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
+        </div>
+      </div>
 
      <div class="section container">
           <img class="responsive-img" src="Imagenes/EQUIPO.jpg" alt="">
