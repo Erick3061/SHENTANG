@@ -9,10 +9,24 @@
       
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
     </head>
 
     <body>
+    <?php
+        $adentro=false;
+        session_start();
+        if(!isset($_SESSION["user"])){
+          echo "<p>";
+          echo "sesion no inicada";
+          echo "</p>";
+          $adentro=false;
+        }else{
+          echo "<p>";
+          echo "session iniciada";
+          echo "</p>";
+          $adentro=true;
+        }
+      ?>
       <!--<div class="navbar-fixed">
         En caso de que la barra de navegacion sea fija
       </div>-->
@@ -30,19 +44,33 @@
             <!--<li><a href="#">Servicios</a></li>-->
             <li><a href="Productos.php">Productos</a></li>
             <li><a href="servicios.php">Servicios</a></li>
+            <?php if ($adentro==false){?>
+              <!-- CUANDO NO SE HA INICIADO SESION -->
             <li><a href="#Registro" class="modal-trigger">
               <span class="white-text">Iniciar Sesion</span>
             </a></li>
-            
-            <!-- <li><a href="Talleres.php">Talleres</a></li> -->
-            <!-- <li><a href="Terapias.php">Terapias</a></li> -->
-            <!-- <li><a href="Espacios.php">Espacios</a></li> -->
-            <!--Menú desplegable-->
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
               Nosotros
               <i class="material-icons right">arrow_drop_down</i></a>
             </li>
+            <?php }else{?>
+              <!-- CUANDO SE INICIO SESION -->
+              <li><a href="Talleres.php">Talleres</a></li>
+              <li><a href="Terapias.php">Terapias</a></li>
+              <li><a href="Espacios.php">Espacios</a></li>
+              <!-- <li>
+                <a href="#" class="dropdown-trigger" data-target="id_drop">
+                Nosotros
+                <i class="material-icons right">arrow_drop_down</i></a>
+              </li> -->
+              <li>
+                  <a href="#" class="dropdown-trigger" data-target="exit">
+                    <span class="name white-text "><?php echo $_SESSION["user"]; ?></span>
+                    <i class="material-icons right">arrow_drop_down</i></a>
+              </li>
+            <?php }?>
+            <!--Menú desplegable-->
             
           </ul>
           <!-- Menu para dispositivos pequeños-->
@@ -68,6 +96,9 @@
             <!-- Contenido del menu movil-->
             <li><a href="Productos.php">Productos</a></li>
             <li><a href="servicios.php">Servicios</a></li>
+            <li><a href="#Registro" class="modal-trigger">
+              <span class="black-text">Iniciar Sesion</span>
+            </a></li>
             <!--<li><div class="divider"></div></li>-->
             <li></li>
             
@@ -85,7 +116,11 @@
             <li><a href="#">Mision</a></li>
             <li><a href="#">Vision</a></li>
           </ul>
-          
+
+          <ul id="exit" class="dropdown-content">
+            <li><a a href="#Cerrarses" class="modal-trigger">Cerrar sesion</a></li>
+          </ul>
+
           <ul id="id_drop2" class="dropdown-content">
             <li><a href="#">¿Quienes somos?</a></li>
             <li><a href="#">Mision</a></li>
@@ -94,18 +129,20 @@
         </div>
       </nav>
       <!--Termino del menú de navegacion-->
+      <!-- verificar session -->
+     
       <!-- INICIAR SESION -->
       <div id="Registro" class="modal white z-depth-4">
         <div class="modal-content">
           <h5 style="margin-bottom: 10%;" class="center-align">INICIAR SESION</h5>
           <p class="hide" id="Msg">Hola</p>
-          <form id="formreg" action="#">
+          <form id="login" action="login.php" name="creausr1" method="POST">
             <div class="input-field">
-              <input type="text" name="nombre" id="nombre" class="validate" required>
+              <input type="text" name="usuario" id="nombre" class="validate" required>
               <label for="nombre">USUARIO</label>
             </div>
             <div class="input-field">
-              <input type="password" name="contra" id="contra" class="validate" required>
+              <input type="password" name="password" id="contra" class="validate" required>
               <label for="contra">CONTRASEÑA</label>
             </div>
             <div class="row">
@@ -113,9 +150,7 @@
                 <a href="#" class="col s6 right-align">Olvide mi contraseña</a>
             </div>
             <div class="center-align"> 
-              <button class="btn-large waves-effect waves-ligth green" style="width: 30%; border-radius: 40px;" type="submit" id="btnreg">
-                INICIAR SESION
-              </button>
+              <input class="btn-large waves-effect waves-ligth green" name="botonlog" type="submit" id="btn" value="INICIAR SESION">
             </div>
           </form>
         </div>
@@ -123,41 +158,51 @@
           <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
         </div>
       </div>
-
+      <!-- CERRAR SESION -->
+      <div id="Cerrarses" class="modal white z-depth-4">
+        <div class="modal-content">
+          <h5 style="margin-bottom: 10%;" class="center-align">¿DE VERDAD DESEA CERRAR SESION?</h5>
+          <p class="hide" id="Msg">Hola</p>
+          <form id="cerrar" action="cerrar.php" name="exit" method="POST">
+            <div class="center-align">
+              <input class="btn-large waves-effect waves-ligth green" name="botoncs" type="submit" id="cs" value="SALIR">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
+        </div>
+      </div>
       <!-- CREAR USUARIO -->
+      <script src='valida.js' class="modal white z-depth-4">
+      </script> 
       <div id="Crearcuenta" class="modal white z-depth-4">
         <div class="modal-content">
           <h5 style="margin-bottom: 10%;" class="center-align">CREAR CUENTA</h5>
           <p class="hide" id="Msg">Hola</p>
-          <form id="formreg" action="#">
+          <form id="creausr" action="" name="creausr" method="POST">
             <div class="input-field">
-              <input type="text" name="nombre" id="nombre" class="validate" required>
+              <input type="text" name="nombre" id="nom" class="validate" required
+              placeholder="Ingrese su nombre">
               <label for="nombre">NOMBRE</label>
             </div>
             <div class="input-field">
-              <input type="text" name="ap" id="ap" class="validate" required>
-              <label for="nombre">APELLIDO</label>
-            </div>
-            <div class="input-field">
-              <input type="text" name="usr" id="usr" class="validate" required>
+              <input type="text" name="usr" id="usr" class="validate" required
+              placeholder="Ingrese su usuario">
               <label for="nombre">USUARIO</label>
             </div>
             <div class="input-field">
-              <input type="password" name="contra" id="contra" class="validate" required>
+              <input type="password" name="contra" id="contra" class="validate" required
+              placeholder="Ingrese su contraseña">
               <label for="contra">CONTRASEÑA</label>
             </div>
             <div class="input-field">
-              <input type="email" name="email" id="email" class="validate" required>
+              <input type="email" name="email" id="email" class="validate" required
+              placeholder="Ingrese su email">
               <label for="nombre">EMAIL</label>
             </div>
-            <div class="input-field">
-              <input type="text" name="tel" id="tel" class="validate" required>
-              <label for="nombre">TELEFONO</label>
-            </div>
             <div class="center-align"> 
-              <button class="btn-large waves-effect waves-ligth green" style="width: 30%; border-radius: 40px;" type="submit" id="btnreg">
-                CREAR CUANTA
-              </button>
+              <input class=" waves-effect waves-ligth green" name="boton" type="submit" id="btnreg" value="CREAR CUENTA">
             </div>
           </form>
         </div>
@@ -165,6 +210,10 @@
           <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
         </div>
       </div>
+      
+      <?php
+      require("crearuser.php"); 
+      ?>
 
      <div class="section container">
           <img class="responsive-img" src="Imagenes/EQUIPO.jpg" alt="">
@@ -240,8 +289,7 @@
             interval:3000
           });
         });
-        
-        
       </script>
+      
       </body>
   </html>

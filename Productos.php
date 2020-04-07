@@ -132,7 +132,7 @@
           $resultado->execute();
           $ban=true;
           /* numero de productos por pagina */
-          $productos_x_pagina=6;
+          $productos_x_pagina=30;
           /* numero de productos en la base de datos */
           $num_productos_db=$resultado->rowCount();
           $num_productos_db=$num_productos_db;
@@ -193,7 +193,7 @@
                       }
                       }
                       /* numero de productos */
-                      echo $resultado->rowCount();
+                      // echo $resultado->rowCount();
                       $base=NULL;
                       ?>
                     </div>
