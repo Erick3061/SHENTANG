@@ -14,12 +14,19 @@
     </head>
 
     <body>
+      
       <?php
         /* forzar a que cuando se muestre la pagina de productos sea en la pagina 1 */
         if(!$_GET){
           header('Location:Productos.php?pagina=1');
         }
         require ("conexiondb.php");
+        session_start();
+        if(!isset($_SESSION["user"])){
+          $adentro=false;
+        }else{
+          $adentro=true;
+        }
       ?>
       <!--<div class="navbar-fixed">
         En caso de que la barra de navegacion sea fija
@@ -28,25 +35,37 @@
       <!-- Menú de navegación-->
       <nav class="green">
         <div class="nav-wrapper container">
-        <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="responsive-img" src="Imagenes/logop.png"></a>
-          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
+        <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="circle responsive-img" src="Imagenes/logop.png"></a>
+          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="circle responsive-img" src="Imagenes/logop1.png"></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
           <!--Menu para ordenadores de resolcuion grande-->
           <ul class="right hide-on-med-and-down">
-            <!--<li><a href="#">Servicios</a></li>-->
-            <li class="active"><a href="#">Productos</a></li>
-            <li><a href="index.php">Pagina principal</a></li>
-            <!-- <li><a href="Talleres.php">Talleres</a></li>
-            <li><a href="Terapias.php">Terapias</a></li>
-            <li><a href="Espacios.php">Espacios</a></li> -->
-            <!--Menú desplegable-->
-            <li>
+              <li class="active"><a href="#">Productos</a></li>
+            <?php if($adentro==true){?>
+              <!-- cuando se inicio la sesion -->
+              <li><a href="servicios.php">Servicios</a></li>
+              <li><a href="Talleres.php">Talleres</a></li>
+              <li><a href="Terapias.php">Terapias</a></li>
+              <li><a href="Espacios.php">Espacios</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
+                  <a href="#" class="dropdown-trigger" data-target="exit">
+                    <span class="name white-text "><?php echo $_SESSION["user"]; ?></span>
+                    <i class="material-icons right">arrow_drop_down</i></a>
+              </li>
+            <?php }else{?>
+              <!-- cuando no esta la sessiom iniciada -->
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
               Nosotros
               <i class="material-icons right">arrow_drop_down</i></a>
             </li>
+            <?php }?> 
+
+            <!--Menú desplegable-->
           </ul>
           <!-- Menu para dispositivos pequeños-->
           <ul class="sidenav" id="menu-side">
@@ -64,37 +83,38 @@
                   <span class="name white-text">Eduardo</span>
                 </a>-->
                 <a href="">
-                <a href="index.php" class="col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
+                <a href="index.php" class="col s12 hide-on-large-only"><img class="circle responsive-img" src="Imagenes/logop1.png"></a>
                 </a>
               </div>
             </li>
             <!-- Contenido del menu movil-->
             <li class="active"><a href="#">Productos</a></li>
-            <!--<li><div class="divider"></div></li>-->
-            <!-- <li><a href="Talleres.php">Talleres</a></li>
-            <li><a href="Terapias.php">Terapias</a></li>
-            <li><a href="Espacios.php">Espacios</a></li> -->
-            <!--Menú desplegable-->
-            <li>
-              <a href="#" class="dropdown-trigger" data-target="id_drop2">
+            <?php if($adentro==true){?>
+              <!-- cuando se inicio la sesion -->
+              <li><a href="servicios.php">Servicios</a></li>
+              <li><a href="Talleres.php">Talleres</a></li>
+              <li><a href="Terapias.php">Terapias</a></li>
+              <li><a href="Espacios.php">Espacios</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
+                  <a href="#" class="dropdown-trigger" data-target="exit">
+                    <span class="name black-text "><?php echo $_SESSION["user"]; ?></span>
+                    <i class="material-icons right">arrow_drop_down</i></a>
+              </li>
+            <?php }else{?>
+              <!-- cuando no esta la sessiom iniciada -->
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
+              <a href="#" class="dropdown-trigger" data-target="id_drop">
               Nosotros
               <i class="material-icons right">arrow_drop_down</i></a>
             </li>
+            <?php }?>
           <!--Menu del dropdown P-->
-          <ul id="id_drop" class="dropdown-content">
-            <li><a href="#">¿Quienes somos?</a></li>
-            <li><a href="#">Mision</a></li>
-            <li><a href="#">Vision</a></li>
-          </ul>
-          <ul id="id_drop2" class="dropdown-content">
-            <li><a href="#">¿Quienes somos?</a></li>
-            <li><a href="#">Mision</a></li>
-            <li><a href="#">Vision</a></li>
-          </ul>
         </div>
       </nav>
       <!--Termino del menú de navegacion-->
-
+      <?php require("formularios.php"); ?>
       <!--Seccion 1-->
       <div class="section">
         <h3 class="center">Nuestros productos</h3>

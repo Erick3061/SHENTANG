@@ -15,9 +15,8 @@
             session_start();
             $_SESSION["user"]=$_POST["usuario"];
             header("location:index.php");
-            //echo "<h2>ADELANTE</h2>";
+            
         }else{
-            echo "<script> alert('EL USUARIO NO EXISTE') </script>";
             header("location:index.php");
         }
     }else{
