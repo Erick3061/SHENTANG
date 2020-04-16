@@ -6,7 +6,6 @@
     $usuario=$_POST["usr"];
     $pass=$_POST["contra"];
     $email=$_POST["email"];
-    echo $nombre. "<br>", $usuario. "<br>", $pass. "<br>" ,$email. "<br>";
     $sql="INSERT INTO usuarios (NOMBRE, USUARIO, PASSWORD, EMAIL) VALUES ('$nombre', '$usuario', '$pass', '$email')";
     $resultado=$base->prepare($sql);
     $resultado->execute();
@@ -17,9 +16,11 @@
     $numero_registro=$resultado->rowCount();
         if($numero_registro!=0){
             /* se inicia la sesion con la vaiable session  */
+            ob_start();
+            session_start();
+            $_SESSION["user"]=$_POST["usr"];
             header("location:index.php");
         }else{
-            session_destroy();
             header("location:index.php");
         }
 }else{

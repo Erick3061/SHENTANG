@@ -7,7 +7,7 @@
         }else{
           $adentro=true;
         }
-
+        require("formularios.php");
       ?>
 <!DOCTYPE html>
   <html>
@@ -41,7 +41,7 @@
             
             <?php if($adentro==true){?>
               <!-- cuando se inicio la sesion -->
-              <li><a href="Productos">Productos</a></li>
+              <li><a href="Productos.php">Productos</a></li>
               <li class="active"><a href="#">Servicios</a></li>
               <li><a href="Talleres.php">Talleres</a></li>
               <li><a href="Terapias.php">Terapias</a></li>
@@ -91,7 +91,7 @@
               <li><a href="Espacios.php">Espacios</a></li>
               <li><a href="index.php">Pagina principal</a></li>
               <li>
-                  <a href="#" class="dropdown-trigger" data-target="exit">
+                  <a href="#" class="dropdown-trigger" data-target="exit2">
                     <span class="name black-text "><?php echo $_SESSION["user"]; ?></span>
                     <i class="material-icons right">arrow_drop_down</i></a>
               </li>
@@ -113,9 +113,15 @@
           <!--Menu del dropdown-->
           
         </div>
+
+        <ul id="exit" class="dropdown-content">
+            <li><a a href="#Cerrarses" class="modal-trigger">Cerrar sesion</a></li>
+          </ul>
+          <ul id="exit2" class="dropdown-content">
+            <li><a a href="#Cerrarses" class="modal-trigger">Cerrar sesion</a></li>
+          </ul>
       </nav>
       <!-- din de la barra de navegacion -->
-      <?php require("formularios.php"); ?>
       <!-- iniciar con las consultas -->
       
       

@@ -120,11 +120,11 @@
               <li><a href="Espacios.php">Espacios</a></li>
               <li><a href="index.php">Pagina principal</a></li>
               <li>
-                  <a href="#" class="dropdown-trigger" data-target="exit">
+                  <a href="#" class="dropdown-trigger" data-target="exit2">
                     <span class="name black-text "><?php echo $_SESSION["user"]; ?></span>
                     <i class="material-icons right">arrow_drop_down</i></a>
               </li>
-            <?php }else{?>
+            <?php  }else{?>
               <!-- cuando no esta la sessiom iniciada -->
               <li class="active"><a href="#">Productos</a></li>
               <li><a href="index.php">Pagina principal</a></li>

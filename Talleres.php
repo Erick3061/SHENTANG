@@ -7,7 +7,7 @@
         }else{
           $adentro=true;
         }
-
+        require("formularios.php");
       ?>
 <!DOCTYPE html>
   <html>
@@ -95,7 +95,7 @@
               <li><a href="Espacios.php">Espacios</a></li>
               <li><a href="index.php">Pagina principal</a></li>
               <li>
-                  <a href="#" class="dropdown-trigger" data-target="exit">
+                  <a href="#" class="dropdown-trigger" data-target="exit2">
                     <span class="name black-text "><?php echo $_SESSION["user"]; ?></span>
                     <i class="material-icons right">arrow_drop_down</i></a>
               </li>
@@ -113,7 +113,7 @@
         </div>
       </nav>
       <!--Termino del menú de navegacion-->
-      <?php require("formularios.php"); ?>       
+          
       <!--Seccion 1-->
       <div class="section">
         <h3 class="center">Nuestros talleres</h3>
