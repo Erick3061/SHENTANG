@@ -89,6 +89,7 @@
           if(ban==false){
             // alert("DATOS CORRECTOS");
             alert("REGISTRO EXITOSO");
+            
             return true;
           }else{
             return false;

@@ -32,7 +32,7 @@
           </a>
           <!--Menu normal-->
           <ul class="right hide-on-med-and-down">
-            <li><a href="servicios.php">Servicios</a></li>
+            
             <li><a href="Productos.php?pagina=<?php echo $num_pag?>">Productos</a></li>
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
@@ -67,11 +67,6 @@
             </li>
             <li>
               <div class="divider"></div>
-            </li>
-            <li>
-              <a href="">
-                Servicios
-              </a>
             </li>
             <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop2">

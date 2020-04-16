@@ -7,7 +7,7 @@
         }else{
           $adentro=true;
         }
-        require("formularios.php");
+        
       ?>
 <!DOCTYPE html>
   <html>
@@ -113,7 +113,7 @@
         </div>
       </nav>
       <!--Termino del menú de navegacion-->
-          
+      <?php require("formularios.php"); ?>
       <!--Seccion 1-->
       <div class="section">
         <h3 class="center">Nuestros talleres</h3>

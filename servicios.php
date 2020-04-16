@@ -7,7 +7,7 @@
         }else{
           $adentro=true;
         }
-        require("formularios.php");
+        
       ?>
 <!DOCTYPE html>
   <html>
@@ -123,7 +123,7 @@
       </nav>
       <!-- din de la barra de navegacion -->
       <!-- iniciar con las consultas -->
-      
+      <?php require("formularios.php"); ?>
       
       <div class="section container ">
               <img class="responsive-img" src="Imagenes/SERVICIOS/SERVICIOS.jpg" alt="">
