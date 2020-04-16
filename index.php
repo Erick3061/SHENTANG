@@ -1,3 +1,12 @@
+<?php
+        $adentro=false;
+        session_start();
+        if(!isset($_SESSION["user"])){
+          $adentro=false;
+        }else{
+          $adentro=true;
+        }
+      ?>
  <!DOCTYPE html>
   <html>
     <head>
@@ -12,17 +21,6 @@
     </head>
 
     <body>
-    <?php
-        $adentro=false;
-        $ne=false;
-        session_start();
-        if(!isset($_SESSION["user"])){
-          $adentro=false;
-        }else{
-          $adentro=true;
-        }
-
-      ?>
       <!--<div class="navbar-fixed">
         En caso de que la barra de navegacion sea fija
       </div>-->

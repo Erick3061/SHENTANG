@@ -1,3 +1,5 @@
+
+<html lang="en">
 <!-- INICIAR SESION -->
 <div id="Registro" class="modal white z-depth-4">
         <div class="modal-content">
@@ -95,3 +97,5 @@
             <li><a href="#">Mision</a></li>
             <li><a href="#">Vision</a></li>
           </ul>
+          
+</html>

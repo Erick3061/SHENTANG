@@ -17,11 +17,9 @@
     $numero_registro=$resultado->rowCount();
         if($numero_registro!=0){
             /* se inicia la sesion con la vaiable session  */
-            session_start();
-            $_SESSION["user"]=$usuario;
             header("location:index.php");
-            
         }else{
+            session_destroy();
             header("location:index.php");
         }
 }else{

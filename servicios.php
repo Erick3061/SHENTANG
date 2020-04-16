@@ -1,3 +1,14 @@
+<?php
+        $adentro=false;
+        $ne=false;
+        session_start();
+        if(!isset($_SESSION["user"])){
+          $adentro=false;
+        }else{
+          $adentro=true;
+        }
+
+      ?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -14,17 +25,7 @@
     </head>
 
     <body>
-    <?php
-        $adentro=false;
-        $ne=false;
-        session_start();
-        if(!isset($_SESSION["user"])){
-          $adentro=false;
-        }else{
-          $adentro=true;
-        }
-
-      ?>
+    
       <!--<div class="navbar-fixed">
         En caso de que la barra de navegacion sea fija
       </div>-->
@@ -40,7 +41,7 @@
             
             <?php if($adentro==true){?>
               <!-- cuando se inicio la sesion -->
-              <li><a href="productos.php">Productos</a></li>
+              <li><a href="Productos">Productos</a></li>
               <li class="active"><a href="#">Servicios</a></li>
               <li><a href="Talleres.php">Talleres</a></li>
               <li><a href="Terapias.php">Terapias</a></li>
@@ -83,7 +84,7 @@
             </li>
             <?php if($adentro==true){?>
               <!-- cuando se inicio la sesion -->
-              <li><a href="productos.php">Productos</a></li>
+              <li><a href="Productos.php">Productos</a></li>
               <li class="active"><a href="#">Servicios</a></li>
               <li><a href="Talleres.php">Talleres</a></li>
               <li><a href="Terapias.php">Terapias</a></li>

@@ -1,3 +1,4 @@
+<html>
 <script>
         function verifica(){
           var ban;
@@ -95,3 +96,4 @@
 
         }
       </script>
+</html>

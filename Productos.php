@@ -1,3 +1,41 @@
+<?php
+        $adentro=false;
+        /* forzar a que cuando se muestre la pagina de productos sea en la pagina 1 */
+        if(!$_GET){
+          header('Location:Productos.php?pagina=1');
+        }
+        require ("conexiondb.php");
+        session_start();
+        if(!isset($_SESSION["user"])){
+          $adentro=false;
+        }else{
+          $adentro=true;
+        }
+        /* CONEXION A BASE DE DATOS CON PDO */
+          /* consulta */
+          $sql="select * from productos";
+          /* preparar los metodos */
+          $resultado=$base->prepare($sql);
+          $resultado->execute();
+          $ban=true;
+          /* numero de productos por pagina */
+          $productos_x_pagina=30;
+          /* numero de productos en la base de datos */
+          $num_productos_db=$resultado->rowCount();
+          $num_productos_db=$num_productos_db;
+          /* numero de paginas correspondiente al numero de productos de la base de datos */
+          $paginas=$num_productos_db/$productos_x_pagina;
+          $paginas=ceil($paginas);
+          /* variable para iniciar la consulta del rango de la consulta */
+          $inicar=($_GET['pagina']-1)*$productos_x_pagina;
+          /* consulta con base a los productos por pagina */
+          $sql="select * from productos limit :ini,:numpro";
+          /* preparar los metodos */
+          $resultado=$base->prepare($sql);
+          $resultado->bindParam(':ini',$inicar,PDO::PARAM_INT);
+          $resultado->bindParam(':numpro',$productos_x_pagina,PDO::PARAM_INT);
+          $resultado->execute();
+      ?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -14,20 +52,6 @@
     </head>
 
     <body>
-      
-      <?php
-        /* forzar a que cuando se muestre la pagina de productos sea en la pagina 1 */
-        if(!$_GET){
-          header('Location:Productos.php?pagina=1');
-        }
-        require ("conexiondb.php");
-        session_start();
-        if(!isset($_SESSION["user"])){
-          $adentro=false;
-        }else{
-          $adentro=true;
-        }
-      ?>
       <!--<div class="navbar-fixed">
         En caso de que la barra de navegacion sea fija
       </div>-->
@@ -88,7 +112,6 @@
               </div>
             </li>
             <!-- Contenido del menu movil-->
-            <li class="active"><a href="#">Productos</a></li>
             <?php if($adentro==true){?>
               <!-- cuando se inicio la sesion -->
               <li><a href="servicios.php">Servicios</a></li>
@@ -103,6 +126,7 @@
               </li>
             <?php }else{?>
               <!-- cuando no esta la sessiom iniciada -->
+              <li class="active"><a href="#">Productos</a></li>
               <li><a href="index.php">Pagina principal</a></li>
               <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
@@ -143,32 +167,6 @@
           </div>
           
           <!--Columna media (Contenido)-->
-          <?php
-          /* CONEXION A BASE DE DATOS CON PDO */
-          /* consulta */
-          $sql="select * from productos";
-          /* preparar los metodos */
-          $resultado=$base->prepare($sql);
-          $resultado->execute();
-          $ban=true;
-          /* numero de productos por pagina */
-          $productos_x_pagina=30;
-          /* numero de productos en la base de datos */
-          $num_productos_db=$resultado->rowCount();
-          $num_productos_db=$num_productos_db;
-          /* numero de paginas correspondiente al numero de productos de la base de datos */
-          $paginas=$num_productos_db/$productos_x_pagina;
-          $paginas=ceil($paginas);
-          /* variable para iniciar la consulta del rango de la consulta */
-          $inicar=($_GET['pagina']-1)*$productos_x_pagina;
-          /* consulta con base a los productos por pagina */
-          $sql="select * from productos limit :ini,:numpro";
-          /* preparar los metodos */
-          $resultado=$base->prepare($sql);
-          $resultado->bindParam(':ini',$inicar,PDO::PARAM_INT);
-          $resultado->bindParam(':numpro',$productos_x_pagina,PDO::PARAM_INT);
-          $resultado->execute();
-          ?>
                       <div class="col l10 s12">
                       <?php    
                       while($ban==true){
