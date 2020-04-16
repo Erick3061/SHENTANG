@@ -14,6 +14,17 @@
     </head>
 
     <body>
+    <?php
+        $adentro=false;
+        $ne=false;
+        session_start();
+        if(!isset($_SESSION["user"])){
+          $adentro=false;
+        }else{
+          $adentro=true;
+        }
+
+      ?>
       <!--<div class="navbar-fixed">
         En caso de que la barra de navegacion sea fija
       </div>-->
@@ -21,24 +32,37 @@
       <!-- Menú de navegación-->
       <nav class="green">
         <div class="nav-wrapper container">
-        <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="responsive-img" src="Imagenes/logop.png"></a>
-          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
+        <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="circle responsive-img" src="Imagenes/logop.png"></a>
+          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="circle responsive-img" src="Imagenes/logop1.png"></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
           <!--Menu para ordenadores de resolcuion grande-->
           <ul class="right hide-on-med-and-down">
-            <!--<li><a href="#">Servicios</a></li>-->
-            <li><a href="Productos.php">Productos</a></li>
-            <li class="active"><a href="#">Talleres</a></li>
-            <li><a href="Terapias.php">Terapias</a></li>
-            <li><a href="Espacios.php">Espacios</a></li>
-            <!--Menú desplegable-->
-            <li>
+            <?php if($adentro==true){?>
+              <!-- cuando se inicio la sesion -->
+              <li><a href="productos.php">Productos</a></li>
+              <li><a href="servicios.php">Servicios</a></li>
+              <li class="active"><a href="#">Talleres</a></li>
+              <li><a href="Terapias.php">Terapias</a></li>
+              <li><a href="Espacios.php">Espacios</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
+                  <a href="#" class="dropdown-trigger" data-target="exit">
+                    <span class="name white-text "><?php echo $_SESSION["user"]; ?></span>
+                    <i class="material-icons right">arrow_drop_down</i></a>
+              </li>
+            <?php }else{?>
+              <!-- cuando no esta la sessiom iniciada -->
+              <li class="active"><a href="#">Talleres</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
               Nosotros
               <i class="material-icons right">arrow_drop_down</i></a>
             </li>
+            <?php }?>
+            
           </ul>
           <!-- Menu para dispositivos pequeños-->
           <ul class="sidenav" id="menu-side">
@@ -56,37 +80,39 @@
                   <span class="name white-text">Eduardo</span>
                 </a>-->
                 <a href="">
-                <a href="index.php" class="col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
+                <a href="index.php" class="col s12 hide-on-large-only"><img class="circle responsive-img" src="Imagenes/logop1.png"></a>
                 </a>
               </div>
             </li>
             <!-- Contenido del menu movil-->
-            <li><a href="Productos.php">Productos</a></li>
-            <!--<li><div class="divider"></div></li>-->
-            <li class="active"><a href="#">Talleres</a></li>
-            <li><a href="Terapias.php">Terapias</a></li>
-            <li><a href="Espacios.php">Espacios</a></li>
-            <!--Menú desplegable-->
-            <li>
-              <a href="#" class="dropdown-trigger" data-target="id_drop2">
+            <?php if($adentro==true){?>
+              <!-- cuando se inicio la sesion -->
+              <li><a href="productos.php">Productos</a></li>
+              <li><a href="servicios.php">Servicios</a></li>
+              <li class="active"><a href="#">Talleres</a></li>
+              <li><a href="Terapias.php">Terapias</a></li>
+              <li><a href="Espacios.php">Espacios</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
+                  <a href="#" class="dropdown-trigger" data-target="exit">
+                    <span class="name black-text "><?php echo $_SESSION["user"]; ?></span>
+                    <i class="material-icons right">arrow_drop_down</i></a>
+              </li>
+            <?php }else{?>
+              <!-- cuando no esta la sessiom iniciada -->
+              <li class="active"><a href="#">Talleres</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
+              <a href="#" class="dropdown-trigger" data-target="id_drop">
               Nosotros
               <i class="material-icons right">arrow_drop_down</i></a>
             </li>
-          <!--Menu del dropdown P-->
-          <ul id="id_drop" class="dropdown-content">
-            <li><a href="#">¿Quienes somos?</a></li>
-            <li><a href="#">Mision</a></li>
-            <li><a href="#">Vision</a></li>
-          </ul>
-          <ul id="id_drop2" class="dropdown-content">
-            <li><a href="#">¿Quienes somos?</a></li>
-            <li><a href="#">Mision</a></li>
-            <li><a href="#">Vision</a></li>
+            <?php }?>
           </ul>
         </div>
       </nav>
       <!--Termino del menú de navegacion-->
-
+      <?php require("formularios.php"); ?>       
       <!--Seccion 1-->
       <div class="section">
         <h3 class="center">Nuestros talleres</h3>
@@ -123,60 +149,17 @@
                   <img class="activator" src="imagenes/p1.jpg">
                 </div>
                 <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Nombre del producto<i class="material-icons right">more_vert</i></span>
-                  <p><a href="producto.php">Ver producto</a></p>
+                  <span class="card-title activator grey-text text-darken-4">Nombre del taller<i class="material-icons right">more_vert</i></span>
+                  <p><a href="producto.php">Ver taller</a></p>
                 </div>
                 <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Nombre del producto<i class="material-icons right">close</i></span>
+                  <span class="card-title grey-text text-darken-4">Nombre del taller<i class="material-icons right">close</i></span>
                   <p>Informacion basica del producto</p>
                 </div>
               </div>
             </div>
-            <div class="col s10 offset-s1 l4 ">
-              <div class="card small">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="imagenes/p1.jpg">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Nombre del producto<i class="material-icons right">more_vert</i></span>
-                  <p><a href="#">Ver producto</a></p>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Nombre del producto<i class="material-icons right">close</i></span>
-                  <p>Informacion basica del producto</p>
-                </div>
-              </div>
-            </div>
-            <div class="col s10 offset-s1 l4">
-              <div class="card small">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="imagenes/p1.jpg">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Nombre del producto<i class="material-icons right">more_vert</i></span>
-                  <p><a href="#">Ver producto</a></p>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Nombre del producto<i class="material-icons right">close</i></span>
-                  <p>Informacion basica del producto</p>
-                </div>
-              </div>
-            </div>
-            <div class="col s10 offset-s1 l4 ">
-              <div class="card small">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="imagenes/p1.jpg">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Nombre del producto<i class="material-icons right">more_vert</i></span>
-                  <p><a href="#">Ver producto</a></p>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Nombre del producto<i class="material-icons right">close</i></span>
-                  <p>Informacion basica del producto</p>
-                </div>
-              </div>
-            </div>
+            
+            
 
           </div>
           <!-- en caso de aside

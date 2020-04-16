@@ -15,28 +15,52 @@
 
     <body>
     <?php
-      //echo "$idproducto";
-      require ("conexiondb.php");
-    ?>
+        $adentro=false;
+        $ne=false;
+        session_start();
+        if(!isset($_SESSION["user"])){
+          $adentro=false;
+        }else{
+          $adentro=true;
+        }
+
+      ?>
       <!--<div class="navbar-fixed">
         En caso de que la barra de navegacion sea fija
       </div>-->
       <nav class="green">
         <div class="nav-wrapper container">
-        <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="responsive-img" src="Imagenes/logop.png"></a>
-          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
+        <a href="index.php" class="brand-logo col sl3 hide-on-med-and-down"><img class="circle responsive-img" src="Imagenes/logop.png"></a>
+          <a href="index.php" class="brand-logo col s12 hide-on-large-only"><img class="circle responsive-img" src="Imagenes/logop1.png"></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
           <!--Menu normal-->
           <ul class="right hide-on-med-and-down">
-            <li class="active"><a href="#">Servicios</a></li>
-            <li><a href="index.php">Pagina principal</a></li>
-            <li>
+            
+            <?php if($adentro==true){?>
+              <!-- cuando se inicio la sesion -->
+              <li><a href="productos.php">Productos</a></li>
+              <li class="active"><a href="#">Servicios</a></li>
+              <li><a href="Talleres.php">Talleres</a></li>
+              <li><a href="Terapias.php">Terapias</a></li>
+              <li><a href="Espacios.php">Espacios</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
+                  <a href="#" class="dropdown-trigger" data-target="exit">
+                    <span class="name white-text "><?php echo $_SESSION["user"]; ?></span>
+                    <i class="material-icons right">arrow_drop_down</i></a>
+              </li>
+            <?php }else{?>
+              <!-- cuando no esta la sessiom iniciada -->
+              <li class="active"><a href="#">Servicios</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
               <a href="#" class="dropdown-trigger" data-target="id_drop">
               Nosotros
-              <i class="material-icons right">arrow_drop_down</i>
-            </a></li>
+              <i class="material-icons right">arrow_drop_down</i></a>
+            </li>
+            <?php }?>
           </ul>
           <!-- Menu movil-->
           <ul class="sidenav" id="menu-side">
@@ -53,56 +77,46 @@
                   <span class="name white-text">Eduardo</span>
                 </a>-->
                 <a href="">
-                <a href="index.php" class="col s12 hide-on-large-only"><img class="responsive-img" src="Imagenes/logop1.png"></a>
+                <a href="index.php" class="col s12 hide-on-large-only"><img class="circle responsive-img" src="Imagenes/logop1.png"></a>
                 </a>
               </div>
             </li>
-            <li>
-              <a href="index.php">
-                Pagina principal
-              </a>
-            </li>
-            <li>
-              <div class="divider"></div>
-            </li>
-            <li class="active">
-              <a href="#">
-                Servicios
-              </a>
-            </li>
-            <li>
-              <a href="#" class="dropdown-trigger" data-target="id_drop2">
+            <?php if($adentro==true){?>
+              <!-- cuando se inicio la sesion -->
+              <li><a href="productos.php">Productos</a></li>
+              <li class="active"><a href="#">Servicios</a></li>
+              <li><a href="Talleres.php">Talleres</a></li>
+              <li><a href="Terapias.php">Terapias</a></li>
+              <li><a href="Espacios.php">Espacios</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
+                  <a href="#" class="dropdown-trigger" data-target="exit">
+                    <span class="name black-text "><?php echo $_SESSION["user"]; ?></span>
+                    <i class="material-icons right">arrow_drop_down</i></a>
+              </li>
+            <?php }else{?>
+              <!-- cuando no esta la sessiom iniciada -->
+              <li class="active"><a href="#">Servicios</a></li>
+              <li><a href="index.php">Pagina principal</a></li>
+              <li>
+              <a href="#" class="dropdown-trigger" data-target="id_drop">
               Nosotros
-              <i class="material-icons right">arrow_drop_down</i>
-            </a></li>
+              <i class="material-icons right">arrow_drop_down</i></a>
+            </li>
+            <?php }?>
             <!--opcion 2--><!--
             <li><a href="#">Enlace1</a></li>
             <li><a href="#">Enlace2</a></li>
             <li><a href="#">Enlace3</a></li>
           </ul>-->
           <!--Menu del dropdown-->
-          <ul id="id_drop" class="dropdown-content">
-            <li><a href="#">¿Quienes somos?</a></li>
-            <li><a href="#">Mision</a></li>
-            <li><a href="#">Vision</a></li>
-          </ul>
-          <ul id="id_drop2" class="dropdown-content">
-            <li><a href="#">¿Quienes somos?</a></li>
-            <li><a href="#">Mision</a></li>
-            <li><a href="#">Vision</a></li>
-          </ul>
+          
         </div>
       </nav>
+      <!-- din de la barra de navegacion -->
+      <?php require("formularios.php"); ?>
       <!-- iniciar con las consultas -->
-      <?php
-        $conexion=mysqli_connect($db_host,$db_user,$db_password); 
-          if((mysqli_connect_errno())==true){
-            echo "error al conectar a la base de datos <br>";
-            exit();
-            }else{
-                
-            }
-      ?>
+      
       
       <div class="section container ">
               <img class="responsive-img" src="Imagenes/SERVICIOS/SERVICIOS.jpg" alt="">
