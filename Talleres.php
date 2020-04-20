@@ -145,9 +145,9 @@
           <div class="col l10 s12">
             <!--Listado de los productos-->
             <div class="col s10 offset-s1 l4">
-              <div class="card small">
+              <div class="card ">
                 <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="imagenes/p1.jpg">
+                  <img class="activator responsive-img" src="Imagenes/p1.jpg">
                 </div>
                 <div class="card-content">
                   <span class="card-title activator grey-text text-darken-4">Nombre del taller<i class="material-icons right">more_vert</i></span>
@@ -234,14 +234,17 @@
 
       <!--JavaScript at end of body for optimized loading-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
       <script >
         document.addEventListener('DOMContentLoaded', function(){
           M.AutoInit();
         });
-
-      </script>
-      <script >
-
+        document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.slider');
+          var instances = M.Slider.init(elems,{
+            interval:3000
+          });
+        });
       </script>
     </body>
   </html>

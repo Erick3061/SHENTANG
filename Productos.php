@@ -129,7 +129,7 @@
               <li class="active"><a href="#">Productos</a></li>
               <li><a href="index.php">Pagina principal</a></li>
               <li>
-              <a href="#" class="dropdown-trigger" data-target="id_drop">
+              <a href="#" class="dropdown-trigger" data-target="id_drop2">
               Nosotros
               <i class="material-icons right">arrow_drop_down</i></a>
             </li>
@@ -182,31 +182,31 @@
                           $mod=$registro->MODELO;
                           $caract=$registro->CARACTERISTICAS;
                           $numpagina=$_GET['pagina'];
-                          //echo $nomp;
-                        //}
-                        // <!--Listado de los productos-->
-                        echo "<div class='col s10 offset-s1 l4'>";
-                          echo "<div class='card small'>";
-                            echo "<div class='card-image waves-effect waves-block waves-light'>";
-                              echo "<img class='activator' src='imagenes/PRODUCTOS/$contador.jpg'>";
-                            echo "</div>";
+                          ?>
+                          
+                       <!--Listado de los productos-->
+                        <div class="col s10 offset-s1 l4">
+                          <div class='card small'>
+                            <div class='card-image waves-effect waves-block waves-light'>
+                              <img class='activator' src='Imagenes/PRODUCTOS/<?php echo $contador; ?>.jpg'>
+                            </div>
                             
-                            echo "<div class='card-content' >";
-                              echo "<span class='card-title activator grey-text text-darken-4'><a href='producto.php?idproducto=$id&nump=$numpagina&img=$contador'>$nomp</a><i class='material-icons right'>more_vert</i></span>";
-                              // echo "<p><a href='producto.php?idproducto=$id'>Ver producto</a></p>";
-                              echo "</div>";
-                            echo "</form>";
-                            echo "<div class='card-reveal'>";
-                              echo "<span style='font-weight: bold' class='card-title black-text text-darken-4 flow-textx'>$nomp<i class='material-icons right'>close</i></span>";
-                              echo "<p style='font-weight: bold' class='green-text text-darken-2 flow-textx'>INFORMACION BASICA DEL PRODUCTO</p>";
-                              echo "<p>Cantidad: $catp</p>";
-                              echo "<p>Tipo de producto: $presen</p>";
-                              echo "<p>Precio: $$costo MX</p>";
-                              echo "<p>Marca: $marca</p>";
-                              echo "<p>Modelo: $mod</p>";
-                            echo "</div>";
-                          echo "</div>";
-                        echo "</div>";
+                            <div class='card-content' >
+                              <span class='card-title activator grey-text text-darken-4'><a href='producto.php?idproducto=<?php echo $id; ?>&nump=<?php echo $numpagina; ?>&img=<?php echo $contador; ?>'><?php echo $nomp; ?></a><i class='material-icons right'>more_vert</i></span>
+                              </div>
+                            
+                            <div class='card-reveal'>
+                              <span style='font-weight: bold' class='card-title black-text text-darken-4 flow-textx'><?php echo $nomp; ?><i class='material-icons right'>close</i></span>
+                              <p style='font-weight: bold' class='green-text text-darken-2 flow-textx'>INFORMACION BASICA DEL PRODUCTO</p>
+                              <p>Cantidad: <?php echo $catp; ?></p>
+                              <p>Tipo de producto: <?php echo $presen; ?></p>
+                              <p>Precio: $<?php echo $costo; ?> MX</p>
+                              <p>Marca: <?php echo $marca; ?></p>
+                              <p>Modelo: <?php echo $mod; ?></p>
+                            </div>
+                          </div>
+                        </div>
+                        <?php
                         $contador=$contador+1;
                       }else{
                         $ban=false;

@@ -148,7 +148,7 @@
             <div class="col s10 offset-s1 l4">
               <div class="card small">
                 <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="imagenes/p1.jpg">
+                  <img class="activator" src="Imagenes/p1.jpg">
                 </div>
                 <div class="card-content">
                   <span class="card-title activator grey-text text-darken-4">Nombre del espacio<i class="material-icons right">more_vert</i></span>

@@ -7,7 +7,12 @@
         }else{
           $adentro=true;
         }
-        
+        require("conexiondb.php");
+        $sql="select * from servicios";
+          /* preparar los metodos */
+          $resultado=$base->prepare($sql);
+          $resultado->execute();
+          $ban=true;
       ?>
 <!DOCTYPE html>
   <html>
@@ -100,7 +105,7 @@
               <li class="active"><a href="#">Servicios</a></li>
               <li><a href="index.php">Pagina principal</a></li>
               <li>
-              <a href="#" class="dropdown-trigger" data-target="id_drop">
+              <a href="#" class="dropdown-trigger" data-target="id_drop2">
               Nosotros
               <i class="material-icons right">arrow_drop_down</i></a>
             </li>
@@ -113,20 +118,61 @@
           <!--Menu del dropdown-->
           
         </div>
-
-        <ul id="exit" class="dropdown-content">
-            <li><a a href="#Cerrarses" class="modal-trigger">Cerrar sesion</a></li>
-          </ul>
-          <ul id="exit2" class="dropdown-content">
-            <li><a a href="#Cerrarses" class="modal-trigger">Cerrar sesion</a></li>
-          </ul>
       </nav>
       <!-- din de la barra de navegacion -->
       <!-- iniciar con las consultas -->
-      <?php require("formularios.php"); ?>
-      
       <div class="section container ">
-              <img class="responsive-img" src="Imagenes/SERVICIOS/SERVICIOS.jpg" alt="">
+      <div class="divider"></div>
+        <div class="row">
+                <?php require("formularios.php");  
+                while($ban==true){
+                  if(($registro=$resultado->fetch(PDO::FETCH_OBJ))==true){
+                    $nombre=$registro->nombre;
+                    $info=$registro->contenido;
+              ?>
+          <div class="col s4 ">         
+          <div class="card">
+            <div class="card-image  waves-block waves-light">
+              <img class="activator" src="Imagenes/SERVDISP/<?php echo $nombre;?>.jpg">
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              
+            </div>
+            <div class="card-action center-align">
+              <a class="modal-trigger black-text" href="#<?php echo $nombre;?>">VER</a>
+            </div>
+          </div>
+          </div>
+
+          <div id="<?php echo $nombre;?>" class="modal">
+            <div class="modal-content">
+              <h4><?php echo $nombre;?></h4>
+              <div class="section container col s6" >
+                
+              </div>
+              
+              <p><?php echo $info;?></p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat green">CERRAR</a>
+            </div>
+          </div>
+              <?php
+              }else{
+                $ban=false;
+              }
+              }
+
+                $base=NULL;
+            ?>
+
+        </div>
+        <div class="divider"></div>
+        
+        
+
+              <!-- <img class="responsive-img" src="Imagenes/SERVICIOS/SERVICIOS.jpg" alt=""> -->
       </div>
       
       
