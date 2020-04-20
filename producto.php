@@ -17,6 +17,7 @@
     <?php
       $idproducto=$_GET["idproducto"];
       $num_pag=$_GET["nump"];
+      $imgnum=$_GET["img"];
       //echo "$idproducto";
       require ("conexiondb.php");
     ?>
@@ -119,23 +120,21 @@
           
         </div>
         <div class="row">
-          <div class="col l9 s12">
+          <div class="col l7">
 
-            <div class="slider">
+            <div class="row">
               <ul class="slides">
 
-                <li>
-                  <img src="Imagenes/p1.jpg" alt="">
-                  <div class="caption center-align">
-                    <h3>Hola</h3>
-                  </div>
+                <li class=" container section">
+                  <img class="responsive-img" src="Imagenes/PRODUCTOS/<?php echo $imgnum?>.jpg" alt="">
+                  
                 </li>
-                <li>
+                <!-- <li>
                   <img src="Imagenes/p2.jpg" alt="">
                 </li>
                 <li>
                   <img src="Imagenes/p3.jpg" alt="">
-                </li>
+                </li> -->
               </ul>
 
             </div>
@@ -192,19 +191,19 @@
                     <a>
                       <i class="material-icons black-text">call</i>
                     </a>
-                    <span>&nbsp 1234567890</span>
+                    <span>(222) 2490429 o 2222177728</span>
                   </li>
                   <li>
                     <a>
                       <i class="material-icons black-text">email</i>
                     </a>
-                    <span>&nbsp easdas@hasdas.com</span>
+                    <span>centro.shentang.puebla@gmail.com</span>
                   </li>
                   <li>
                     <a href="#" >
                       <i class="material-icons black-text">add_location</i>
                     </a>
-                    <span>&nbsp Puebla, pueb</span>
+                    <span>TEPEYAHUALCO NO.37-1, COL. LA PAZ, PUEBLA PUE. CP.72160</span>
                   </li>
                 </ul>
               </div>
@@ -221,7 +220,7 @@
           </div>
           <div class="footer-copyright center">
             <div class="container">
-            © 2014 Copyright Text
+            © 2020 Shen Tang
             
             </div>
           </div>

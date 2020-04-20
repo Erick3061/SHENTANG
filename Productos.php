@@ -168,7 +168,8 @@
           
           <!--Columna media (Contenido)-->
                       <div class="col l10 s12">
-                      <?php    
+                      <?php
+                      $contador=1; 
                       while($ban==true){
                         if(($registro=$resultado->fetch(PDO::FETCH_OBJ))==true){
                         //for($i=0;$i<=$tam-1;$i++){      
@@ -187,11 +188,11 @@
                         echo "<div class='col s10 offset-s1 l4'>";
                           echo "<div class='card small'>";
                             echo "<div class='card-image waves-effect waves-block waves-light'>";
-                              echo "<img class='activator' src='imagenes/p1.jpg'>";
+                              echo "<img class='activator' src='imagenes/PRODUCTOS/$contador.jpg'>";
                             echo "</div>";
                             
                             echo "<div class='card-content' >";
-                              echo "<span class='card-title activator grey-text text-darken-4'><a href='producto.php?idproducto=$id&nump=$numpagina'>$nomp</a><i class='material-icons right'>more_vert</i></span>";
+                              echo "<span class='card-title activator grey-text text-darken-4'><a href='producto.php?idproducto=$id&nump=$numpagina&img=$contador'>$nomp</a><i class='material-icons right'>more_vert</i></span>";
                               // echo "<p><a href='producto.php?idproducto=$id'>Ver producto</a></p>";
                               echo "</div>";
                             echo "</form>";
@@ -206,6 +207,7 @@
                             echo "</div>";
                           echo "</div>";
                         echo "</div>";
+                        $contador=$contador+1;
                       }else{
                         $ban=false;
                       }
@@ -265,19 +267,19 @@
                     <a>
                       <i class="material-icons black-text">call</i>
                     </a>
-                    <span>&nbsp 1234567890</span>
+                    <span>(222) 2490429 o 2222177728</span>
                   </li>
                   <li>
                     <a>
                       <i class="material-icons black-text">email</i>
                     </a>
-                    <span>&nbsp easdas@hasdas.com</span>
+                    <span>centro.shentang.puebla@gmail.com</span>
                   </li>
                   <li>
                     <a href="#" >
                       <i class="material-icons black-text">add_location</i>
                     </a>
-                    <span>&nbsp Puebla, pueb</span>
+                    <span>TEPEYAHUALCO NO.37-1, COL. LA PAZ, PUEBLA PUE. CP.72160</span>
                   </li>
                 </ul>
               </div>
@@ -294,7 +296,7 @@
           </div>
           <div class="footer-copyright center">
             <div class="container">
-            © 2014 Copyright Text
+            © 2020 Shen Tang
             
             </div>
           </div>

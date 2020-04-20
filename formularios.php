@@ -39,6 +39,44 @@
           </form>
         </div>
         <div class="modal-footer">
+          <a href="index.php" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
+        </div>
+      </div>
+      <!-- ¡QUIENES SOMOS? -->
+      <div id="somos" class="modal white z-depth-4">
+        <div class="modal-content">
+          <h5 style="margin-bottom: 10%;" class="center-align">¿QUIENES SOMOS?</h5>
+          <p class="hide" id="Msg">Hola</p>
+          <h6>Somos un Centro Multidisciplinario que tiene como objetivo ayudarte a crecer de manera integral mediante herramientas alternativas y con el mejor equipo de profesionales en el ámbito.</h6>
+        </div>
+
+        <div class="modal-footer">
+          <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
+        </div>
+      </div>
+      <!-- MISION  -->
+      <div id="mision" class="modal white z-depth-4">
+        <div class="modal-content">
+          <h5 style="margin-bottom: 10%;" class="center-align">MISIÓN</h5>
+          <p class="hide" id="Msg">Hola</p>
+          <h6>Alcanzar un bienestar físico, emocional, sentimental y espiritual con ayuda de las distintas terapias alternativas ayudando a la autosanación de la naturaleza del ser humano.</h6>
+          <h6>Es por eso que ShenTang cuenta con profesionales de excelencia, quienes, basados en una política de respeto por la integridad y privacidad de cada paciente, están comprometidos a apoyar el crecimiento personal orientado al cambio de mejores hábitos para vivir saludablemente.</h6>
+        </div>
+
+        <div class="modal-footer">
+          <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
+        </div>
+      </div>
+      <!-- VISION -->
+      <div id="vision" class="modal white z-depth-4">
+        <div class="modal-content">
+          <h5 style="margin-bottom: 10%;" class="center-align">VISIÓN</h5>
+          <p class="hide" id="Msg">Hola</p>
+          <h6>Dar a conocer los beneficios que tiene cada terapia y demostrar que el terapeuta actúa como facilitador de salud, aplicando la terapia más adecuada según cada caso.</h6>
+          <h6>Nuestra visión es crecer y ser recomendados nuestros pacientes que han sido testigos del cambio.</h6>
+        </div>
+
+        <div class="modal-footer">
           <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
         </div>
       </div>
@@ -80,10 +118,10 @@
         </div>
       </div>
       <!--Menu del dropdown P-->
-      <ul id="id_drop" class="dropdown-content">
-            <li><a href="#">¿Quienes somos?</a></li>
-            <li><a href="#">Mision</a></li>
-            <li><a href="#">Vision</a></li>
+          <ul id="id_drop" class="dropdown-content">
+            <li><a href="#somos" class="modal-trigger">¿Quienes somos?</a></li>
+            <li><a href="#mision" class="modal-trigger">Misión</a></li>
+            <li><a href="#vision" class="modal-trigger">Visión</a></li>
           </ul>
 
           <ul id="exit" class="dropdown-content">
@@ -93,9 +131,9 @@
             <li><a a href="#Cerrarses" class="modal-trigger">Cerrar sesion</a></li>
           </ul>
           <ul id="id_drop2" class="dropdown-content">
-            <li><a href="#">¿Quienes somos?</a></li>
-            <li><a href="#">Mision</a></li>
-            <li><a href="#">Vision</a></li>
+            <li><a href="#somos" class="modal-trigger">¿Quienes somos?</a></li>
+            <li><a href="#mision" class="modal-trigger">Misión</a></li>
+            <li><a href="#vision" class="modal-trigger">Visión</a></li>
           </ul>
           
 </html>
