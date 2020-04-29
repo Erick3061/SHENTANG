@@ -186,9 +186,9 @@
                           
                        <!--Listado de los productos-->
                         <div class="col s10 offset-s1 l4">
-                          <div class='card small'>
+                          <div class='card large'>
                             <div class='card-image waves-effect waves-block waves-light'>
-                              <img class='activator' src='Imagenes/PRODUCTOS/<?php echo $contador; ?>.jpg'>
+                              <img class='activator' src='Imagenes/PRODUCTOS/<?php echo $nomp; ?>.jpg'>
                             </div>
                             
                             <div class='card-content' >

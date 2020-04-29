@@ -126,7 +126,7 @@
               <ul class="slides">
 
                 <li class=" container section">
-                  <img class="responsive-img" src="Imagenes/PRODUCTOS/<?php echo $imgnum?>.jpg" alt="">
+                  <img class="responsive-img" src="Imagenes/PRODUCTOS/<?php echo $nomp?>.jpg" alt="">
                   
                 </li>
                 <!-- <li>
