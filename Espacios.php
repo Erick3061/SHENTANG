@@ -121,54 +121,28 @@
         <div class="row">
           <div class="col l7 s10 offset-l3 offset-s1">
             <div class="nav-wrapper">
-              <form>
+              <!-- <form>
                 <div class="input-field">
                   <input id="search" type="search" required>
                   <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                   <i class="material-icons">close</i>
                 </div>
-              </form>
+              </form> -->
             </div>
           </div>
         </div>
       </div>
       <!--Fin de seccion 1-->
-
-      <!--Seccion 2-->
-      <div class="section">
-        <div class="row">
-          <!--Columna Izquiera (No se usa en este momento)-->
-          <div class="col l2 hide-on-med-and-down">
-            <span></span>
-          </div>
-          
-          <!--Columna media (Contenido)-->
-          <div class="col l10 s12">
-            <!--Listado de los productos-->
-            <div class="col s10 offset-s1 l4">
-              <div class="card small">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="Imagenes/p1.jpg">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Nombre del espacio<i class="material-icons right">more_vert</i></span>
-                  <p><a href="producto.php">Ver espacio</a></p>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Nombre del espacio<i class="material-icons right">close</i></span>
-                  <p>Informacion basica del espacio</p>
-                </div>
-              </div>
-            </div>
-           
-          </div>
-          <!-- en caso de aside
-          <div class="col l2 hide-on-med-and-down">
-            
-          </div>-->
+      <div class="section container">
+        <div>
+          <img class="responsive-img" src="Imagenes/SERVICIOS/RENTA DE ESPACIOS.jpg" alt="">
+          <img class="responsive-img" src="Imagenes/SERVICIOS/ESPACIOS EN RENTA.jpg" alt="">
+          <img class="responsive-img" src="Imagenes/SERVICIOS/CONSULTORIO RENTA.jpg" alt="">
         </div>
-
+        
       </div>
+      <!--Seccion 2-->
+      
       <!--Finaliza Seccion1-->
 
 

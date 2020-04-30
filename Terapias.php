@@ -133,40 +133,16 @@
       <!--Fin de seccion 1-->
 
       <!--Seccion 2-->
-      <div class="section">
-        <div class="row">
-          <!--Columna Izquiera (No se usa en este momento)-->
-          <div class="col l2 hide-on-med-and-down">
-            <span></span>
-          </div>
+      <div class="section container">
+        <div>
+          <img class="responsive-img" src="Imagenes/SERVICIOS/CHAKRAS.jpg" alt="">
+          <img class="responsive-img" src="Imagenes/SERVICIOS/TERAPIA A DISTANCIA.jpg" alt="">
+          <img class="responsive-img" src="Imagenes/SERVICIOS/TERAPIA CUANTICA.jpg" alt="">
+          <img class="responsive-img" src="Imagenes/SERVICIOS/SAAMA.jpg" alt="">
+          <img class="responsive-img" src="Imagenes/SERVICIOS/YOGA.jpg" alt="">
           
-          <!--Columna media (Contenido)-->
-          <div class="col l10 s12">
-            <!--Listado de los productos-->
-            <div class="col s10 offset-s1 l4">
-              <div class="card small">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="Imagenes/p1.jpg">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Nombre de l terapia<i class="material-icons right">more_vert</i></span>
-                  <p><a href="producto.php">Ver terapia</a></p>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Nombre de la terapia<i class="material-icons right">close</i></span>
-                  <p>Informacion basica de la terapia </p>
-                </div>
-              </div>
-            </div>
-            
-
-          </div>
-          <!-- en caso de aside
-          <div class="col l2 hide-on-med-and-down">
-            
-          </div>-->
         </div>
-
+        
       </div>
       <!--Finaliza Seccion1-->
 

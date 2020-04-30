@@ -1,26 +1,30 @@
 <?php
     require("conexiondb.php");
-    $sql="select * from usuarios where USUARIO= :login AND PASSWORD= :password";
-    $resultado=$base->prepare($sql);
-    if(isset($_POST["botonlog"])){
-        $login=htmlentities(addslashes($_POST["usuario"]));
-        $password=htmlentities(addslashes($_POST["password"]));
+
+    $login=htmlentities(addslashes($_POST["usuario"]));
+    $password=htmlentities(addslashes($_POST["password"]));
+
+    $sqlU="SELECT * FROM usuarios where USUARIO= :login";
+    $resultadoU=$base->prepare($sqlU);
+    $resultadoU->bindValue(":login",$login);
+    $resultadoU->execute();
+    $numreg=$resultadoU->rowCount();
+    if($numreg!=0){
+        $sql="select * from usuarios where USUARIO= :login AND PASSWORD= :password";
+        $resultado=$base->prepare($sql);
         $resultado->bindValue(":login",$login);
         $resultado->bindValue(":password",$password);
         $resultado->execute();
-        /* checar que exista el usuario */
         $numero_registro=$resultado->rowCount();
         if($numero_registro!=0){
-            /* se inicia la sesion con la vaiable session  */
             ob_start();
             session_start();
             $_SESSION["user"]=$_POST["usuario"];
             header("location:index.php");
-            
         }else{
-            header("location:index.php");
+            header("Location:index.php?erno=1");
         }
     }else{
-        //echo "<script> alert('no se han enviado datos del formulario');</script>";
+        header("Location: index.php?erno=2");
     }
 ?>
