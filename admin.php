@@ -7,7 +7,6 @@
         }else{
           $adentro=true;
         }
-        
       ?>
 <!DOCTYPE html>
   <html>
@@ -40,28 +39,15 @@
           </a>
           <!--Menu para ordenadores de resolcuion grande-->
           <ul class="right hide-on-med-and-down">
-            <?php if($adentro==true){?>
+          <?php if($adentro==true){?>
               <!-- cuando se inicio la sesion -->
-              <li><a href="Productos.php">Productos</a></li>
-              <li><a href="servicios.php">Servicios</a></li>
-              <li class="active"><a href="#">Talleres</a></li>
-              <li><a href="Terapias.php">Terapias</a></li>
-              <li><a href="Espacios.php">Espacios</a></li>
-              <li><a href="index.php">Pagina principal</a></li>
+              <li><a href="modificar.php">MODIFICAR PRODUCTO</a></li>
+              <li><a href="eliminar.php">ELIMINAR PRODUCTO</a></li>
               <li>
                   <a href="#" class="dropdown-trigger" data-target="exit">
                     <span class="name white-text "><?php echo $_SESSION["user"]; ?></span>
                     <i class="material-icons right">arrow_drop_down</i></a>
               </li>
-            <?php }else{?>
-              <!-- cuando no esta la sessiom iniciada -->
-              <li class="active"><a href="#">Talleres</a></li>
-              <li><a href="index.php">Pagina principal</a></li>
-              <li>
-              <a href="#" class="dropdown-trigger" data-target="id_drop">
-              Nosotros
-              <i class="material-icons right">arrow_drop_down</i></a>
-            </li>
             <?php }?>
             
           </ul>
@@ -88,26 +74,14 @@
             <!-- Contenido del menu movil-->
             <?php if($adentro==true){?>
               <!-- cuando se inicio la sesion -->
-              <li><a href="Productos.php">Productos</a></li>
-              <li><a href="servicios.php">Servicios</a></li>
-              <li class="active"><a href="#">Talleres</a></li>
-              <li><a href="Terapias.php">Terapias</a></li>
-              <li><a href="Espacios.php">Espacios</a></li>
-              <li><a href="index.php">Pagina principal</a></li>
+              <li><a href="modificar.php">MODIFICAR PRODUCTO</a></li>
+              <li><a href="eliminar.php">ELIMINAR PRODUCTO</a></li>
+              
               <li>
                   <a href="#" class="dropdown-trigger" data-target="exit2">
                     <span class="name black-text "><?php echo $_SESSION["user"]; ?></span>
                     <i class="material-icons right">arrow_drop_down</i></a>
               </li>
-            <?php }else{?>
-              <!-- cuando no esta la sessiom iniciada -->
-              <li class="active"><a href="#">Talleres</a></li>
-              <li><a href="index.php">Pagina principal</a></li>
-              <li>
-              <a href="#" class="dropdown-trigger" data-target="id_drop">
-              Nosotros
-              <i class="material-icons right">arrow_drop_down</i></a>
-            </li>
             <?php }?>
           </ul>
         </div>
@@ -116,17 +90,10 @@
       <?php require("formularios.php"); ?>
       <!--Seccion 1-->
       <div class="section">
-        <h3 class="center">Nuestros talleres</h3>
+        <h3 class="center">ADMINISTRADOR</h3>
         <div class="row">
           <div class="col l7 s10 offset-l3 offset-s1">
             <div class="nav-wrapper">
-              <form>
-                <!-- <div class="input-field">
-                  <input id="search" type="search" required>
-                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                  <i class="material-icons">close</i>
-                </div> -->
-              </form>
             </div>
           </div>
         </div>
@@ -134,57 +101,8 @@
       <!--Fin de seccion 1-->
 
       <!--Seccion 2-->
-      <div class="section">
-        <div class="row">
-          <!--Columna Izquiera (No se usa en este momento)-->
-          <div class="col l2 hide-on-med-and-down">
-            <span></span>
-          </div>
-          
-          <!--Columna media (Contenido)-->
-          <div class="section container parallax-container">
-		<div class="parallax"><img src="Imagenes/talleres/t1.jpg"></div>
-	</div>
-	<div class="section white">
-		<div class="row container">
-			<h2 class="header">Taller para el amor</h2>
-			<p class="grey-text text-darken-3 lighten-3">¿Tienes mala suerte en el amor? ¿No logras encontrar a la pareja adecuada? ¿Te cansaste de la soltería o de las relaciones fallidas? Te explicaremos todo acerca de la psicología transgeneracional. Recuerda que cada taller tiene su cupo limitado. Pregunta por la fecha más cercana.</p>
-		</div>
-	</div>
-	<div class="parallax-container">
-		<div class="parallax"><img src="Imagenes/talleres/t2.jpg"></div>
-	</div>
-	<div class="section white">
-		<div class="row container">
-			<h2 class="header">Taller Interior</h2>
-			<p class="grey-text text-darken-3 lighten-3">Transforma la relación contigo misma desde tus células hasta tu alma. Este es un llamado a sanar lo que te mantiene estancada en el pasado y conectar con tu felicidad, amor pareja y prosperidad. Todo ello está en ti, escondido entre capas de patrones aprendidos, creencias, experiencias negativas y memorias inconscientes. Deja atrás los patrones de dolor, sacrificio y sufrimiento. Comienza una nueva realidad en donde tu energía Femenina Sagrada diseña tu vida, con sabiduría, intuición y conciencia. Trabaja con tu autoestima y reafirma tu feminidad. En este taller te guiaremos paso a paso en el camino del despertar con tu Diosa interior. Cupo limitado, pregunta por la fecha más cercana.</p>
-		</div>
-	</div>
-	<div class="parallax-container">
-		<div class="parallax"><img src="Imagenes/talleres/t3.jpg"></div>
-	</div>
-	<div class="section white">
-		<div class="row container">
-			<h2 class="header">Taller de la Prosperidad</h2>
-			<p class="grey-text text-darken-3 lighten-3">Te invitamos a participar en el taller prosperidad para mejorar tu abundancia y prosperidad, incrementar tu clientela, hacer crecer tu negocio y mejorar tus finanzas en todos los aspectos. Trabajamos con herramientas de Grigori Gravovoi y programación cuántica.</p>
-			<img src="Imagenes/talleres/t5.jpg" style="width: 50%">
-		</div>
-	</div>
-	<div class="parallax-container">
-		<div class="parallax"><img src="Imagenes/talleres/t4.jpg"></div>
-	</div>
-	<div class="section white">
-		<div class="row container">
-			<h2 class="header">Taller cuantico</h2>
-			<p class="grey-text text-darken-3 lighten-3">TAsiste nuestra terapia cuántica de desbloqueo integral ,la cual actúa a nivel, físico mental, emocional y espiritual en esta ocasión se llevará a cabo de manera grupal así la energía de sanación se percibirá con mayor intensidad .</p>
-		</div>
-	</div>
-          <!-- en caso de aside
-          <div class="col l2 hide-on-med-and-down">
-            
-          </div>-->
-        </div>
-
+      
+        
       </div>
       <!--Finaliza Seccion1-->
 
@@ -250,17 +168,14 @@
 
       <!--JavaScript at end of body for optimized loading-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
       <script >
         document.addEventListener('DOMContentLoaded', function(){
           M.AutoInit();
         });
-        document.addEventListener('DOMContentLoaded', function() {
-          var elems = document.querySelectorAll('.slider');
-          var instances = M.Slider.init(elems,{
-            interval:3000
-          });
-        });
+
+      </script>
+      <script >
+
       </script>
     </body>
   </html>

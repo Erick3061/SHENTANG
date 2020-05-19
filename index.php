@@ -6,6 +6,7 @@
 					$adentro=false;
 				}else{
 					$adentro=true;
+					
 				}
 				if (isset($_GET['erno']) && $adentro==false) {
 					$error=$_GET['erno'];
@@ -232,6 +233,15 @@
 					$('#Msg').addClass('red-text');
 					$('#Msg').text("Usuario no existente");
 					setTimeout("ocultar()",4000);
+				break;
+				case '10':
+					$('#Mandarcorreo').modal();
+					$('#Mandarcorreo').modal('open'); 
+					setTimeout("ocultar()",4000);
+					alert("NO EXISTE ESE CORREO");
+				break;
+				case '11':
+					alert("CONTRASEÑA ENVIADA A CORREO ELECTRONICO");
 				default:
 					// statements_def
 					break;

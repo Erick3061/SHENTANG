@@ -16,7 +16,7 @@
             </div>
             <div class="row">
                 <a href="#Crearcuenta" class="col s6 modal-close modal-trigger" >Crear cuenta</a>
-                <a href="#" class="col s6 right-align">Olvide mi contraseña</a>
+                <a href="#Mandarcorreo" class="col s6 right-align modal-close modal-trigger">Olvide mi contraseña</a>
             </div>
             <div class="center-align"> 
               <input class="btn-large waves-effect waves-ligth green" name="botonlog" type="submit" id="btn" value="INICIAR SESION">
@@ -110,6 +110,26 @@
             </div>
             <div class="center-align"> 
               <input class=" waves-effect waves-ligth green" name="botoncu" type="submit" id="btnreg" value="CREAR CUENTA">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
+        </div>
+      </div>
+      <!-- MANDAR CORREO -->
+      <div id="Mandarcorreo" class="modal white z-depth-4">
+        <div class="modal-content">
+          <h5 style="margin-bottom: 10%;" class="center-align">INGRESE SU CORREO ELECTRONICO</h5>
+          <p class="hide" id="Msg">Hola</p>
+          <form id="creausr" action="mandarcorreo.php" name="sendemail" method="POST">
+            <div class="input-field">
+              <input type="email" name="email" id="email" class="validate" required
+              placeholder="Ingrese su email">
+              <label for="nombre">EMAIL</label>
+            </div>
+            <div class="center-align"> 
+              <input class=" waves-effect waves-ligth green" name="botoncu" type="submit" id="btnreg" value="ENVIAR CONTRASEÑA">
             </div>
           </form>
         </div>
