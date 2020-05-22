@@ -42,7 +42,7 @@
 					<!--Menu para ordenadores de resolcuion grande-->
 					<ul class="right hide-on-med-and-down">
 						<!--<li><a href="#">Servicios</a></li>-->
-						<li><a href="Productos.php">Productos</a></li>
+						<li><a href="Productos.php">Productossss</a></li>
 						<li><a href="servicios.php">Servicios</a></li>
 						<?php if ($adentro==false){?>
 							<!-- CUANDO NO SE HA INICIADO SESION -->
