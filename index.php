@@ -1,55 +1,33 @@
+
 <?php
 include "header.php";
 ?>
-<div class="section container">
-	<img class="responsive-img" src="Imagenes/EQUIPO.jpg" alt="">
+<div class="row">
+	<div class="col s8 offset-s2">
+		<div class="slider" style="margin-top: 10%; margin-bottom: 10%;">
+			<ul class="slides">
+				<li>
+					<img class="responsive-img" style="" src="Imagenes/EQUIPO.jpg">
+				</li>
+				<li>
+					<img class="responsive-img" src="Imagenes/PORTADA.jpg">
+				</li>  
+			</ul>
+		</div>
+	</div>
+	
 </div>
 
 <?php
 include "formularios.php";
 include "pie.php";	
 ?>
-
 <script type="text/javascript">
-	function ocultar(){
-		$('#Msg').addClass('hide');
-		$('#Msg').removeClass('red-text');
-		$('#Msg').removeClass('green-text');
-	}
+	document.addEventListener('DOMContentLoaded', function() {
+		var elems = document.querySelectorAll('.slider');
+		var instances = M.Slider.init(elems,{
+			interval:3000
+		});
+	});
+</script>
 
-	$(document).ready(function(){
-		var error='<?php echo $error;?>';
-		switch (error) {
-			case '0':
-			$('#Msg').addClass('hide');
-			break;
-			case '1':
-			$('#Registro').modal();
-			$('#Registro').modal('open'); 
-			$('#Msg').removeClass('hide');
-			$('#Msg').addClass('red-text');
-			$('#Msg').text("Contraseña incorrecta");
-			setTimeout("ocultar()",4000);
-			break;
-			case '2':
-			$('#Registro').modal();
-			$('#Registro').modal('open'); 
-			$('#Msg').removeClass('hide');
-			$('#Msg').addClass('red-text');
-			$('#Msg').text("Usuario no existente");
-			setTimeout("ocultar()",4000);
-			break;
-			case '10':
-			$('#Mandarcorreo').modal();
-			$('#Mandarcorreo').modal('open'); 
-			setTimeout("ocultar()",4000);
-			alert("NO EXISTE ESE CORREO");
-			break;
-			case '11':
-			alert("CONTRASEÑA ENVIADA A CORREO ELECTRONICO");
-			default:
-					// statements_def
-					break;
-				}
-			});
-		</script>

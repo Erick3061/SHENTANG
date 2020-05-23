@@ -4,8 +4,8 @@
 <div id="Registro" class="modal white z-depth-4">
         <div class="modal-content">
           <h5 style="margin-bottom: 10%;" class="center-align">INICIAR SESION</h5>
-          <p class="hide" id="Msg">Hola</p>
-          <form id="login" action="login.php" name="creausr1" method="POST" onsubmit="return verifica()">
+          <p class="hide" id="Msg"></p>
+          <form id="login" action="login.php" name="creausr1" method="POST" >
             <div class="input-field">
               <input type="text" name="usuario" id="nombre" class="validate" required>
               <label for="nombre">USUARIO</label>
@@ -24,7 +24,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <a href="index.php" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
+          <a href="#" class="modal-close waves-effect waves-green btn-flat">CERRAR</a>
         </div>
       </div>
       <!-- CERRAR SESION -->
@@ -81,13 +81,11 @@
         </div>
       </div>
       <!-- CREAR USUARIO -->
-      <script src='valida.js' class="modal white z-depth-4">
-      </script> 
       <div id="Crearcuenta" class="modal white z-depth-4">
         <div class="modal-content">
-          <h5 style="margin-bottom: 10%;" class="center-align">CREAR CUENTA</h5>
-          <p class="hide" id="Msg">Hola</p>
-          <form id="creausr" action="crearuser.php" name="creausr" method="POST" onsubmit="return verifica2()">
+          <h5 style="margin-bottom: 5%;" class="center-align">CREAR CUENTA</h5>
+          <p class="hide center-align" id="Msg1"></p>
+          <form id="creausr" action="crearuser.php" name="creausr" method="POST" >
             <div class="input-field">
               <input type="text" name="nombre" id="nom" class="validate" required
               placeholder="Ingrese su nombre">
@@ -109,7 +107,7 @@
               <label for="nombre">EMAIL</label>
             </div>
             <div class="center-align"> 
-              <input class=" waves-effect waves-ligth green" name="botoncu" type="submit" id="btnreg" value="CREAR CUENTA">
+              <input class="btn waves-effect waves-ligth green" name="botoncu" type="submit" id="btnreg" value="CREAR CUENTA">
             </div>
           </form>
         </div>
@@ -129,7 +127,7 @@
               <label for="nombre">EMAIL</label>
             </div>
             <div class="center-align"> 
-              <input class=" waves-effect waves-ligth green" name="botoncu" type="submit" id="btnreg" value="ENVIAR CONTRASEÑA">
+              <input class="btn waves-effect waves-ligth green" name="botoncu" type="submit" id="btnreg" value="ENVIAR CONTRASEÑA">
             </div>
           </form>
         </div>

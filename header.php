@@ -2,6 +2,7 @@
 $adentro=false;
 session_start();
 $error=0;
+$err=0;
 if(!isset($_SESSION["user"])){
 	$adentro=false;
 }else{
@@ -9,6 +10,9 @@ if(!isset($_SESSION["user"])){
 }
 if (isset($_GET['erno']) && $adentro==false) {
 	$error=$_GET['erno'];
+}
+if (isset($_GET['erno2']) && $adentro==false) {
+	$err=$_GET['erno2'];
 }
 ?>
 <!DOCTYPE html>
@@ -40,7 +44,7 @@ if (isset($_GET['erno']) && $adentro==false) {
 			</a>
 			<!--Menu desktop-->
 			<ul class="right hide-on-med-and-down">
-				<li><a href="Productos.php">Productos</a></li>
+				<li id="ID_P"><a href="Productos.php">Productos</a></li>
 				<li><a href="servicios.php">Servicios</a></li>
 				<?php if ($adentro==false){?>
 					<!-- CUANDO NO SE HA INICIADO SESION -->
@@ -88,7 +92,7 @@ if (isset($_GET['erno']) && $adentro==false) {
 					</div>
 				</li>
 				<!--Content-->
-				<li><a href="Productos.php">Productos</a></li>
+				<li id="ID_P1"><a href="Productos.php">Productos</a></li>
 				<li><a href="servicios.php">Servicios</a></li>
 				<?php if ($adentro==false){?>
 					<!-- CUANDO NO SE HA INICIADO SESION -->
