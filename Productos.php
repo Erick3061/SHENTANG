@@ -88,13 +88,17 @@ include "header.php";
             </div>
 
             <div class='card-reveal'>
-              <span style='font-weight: bold' class='card-title black-text text-darken-4 flow-textx'><?php echo $nomp; ?><i class='material-icons right'>close</i></span>
+              <span style='font-weight: bold' class='card-title black-text text-darken-4 flow-textx'><i class='material-icons right'>close</i></span>
+              <h5><?php echo $nomp; ?></h5>
               <p style='font-weight: bold' class='green-text text-darken-2 flow-textx'>INFORMACION BASICA DEL PRODUCTO</p>
               <p>Cantidad: <?php echo $catp; ?></p>
               <p>Tipo de producto: <?php echo $presen; ?></p>
               <p>Precio: $<?php echo $costo; ?> MX</p>
               <p>Marca: <?php echo $marca; ?></p>
               <p>Modelo: <?php echo $mod; ?></p>
+              <span onclick="Agregar(<?php echo "'".$nomp."'"; ?>)" class="btn-floating  waves-effect waves-light green right" style="margin-top: 15%;">
+                <i class="material-icons">add_shopping_cart</i>
+              </span>
             </div>
           </div>
         </div>
@@ -137,4 +141,7 @@ include "header.php";
 <script type="text/javascript">
   $('#ID_P').addClass("active");
   $('#ID_P1').addClass("active");
+  function Agregar (nombre) {
+    alert(nombre);
+  }
 </script>
