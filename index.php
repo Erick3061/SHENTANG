@@ -6,6 +6,7 @@ include "header.php";
 		<div class="slider">
 			<ul class="slides">
 				<li>
+<<<<<<< HEAD
 					<img src="Imagenes/EQUIPO.jpg">
 					<div class="caption center-align">
 						
@@ -16,6 +17,9 @@ include "header.php";
 					<div class="caption center-align">
 						
 					</div>
+=======
+					<img class="responsive-img" src="Imagenes/EQUIPO.jpg">
+>>>>>>> b85594b38676ff4cdf04d2547485fb209236403d
 				</li>
 				<li>
 					<img src="">
@@ -32,6 +36,7 @@ include "header.php";
 <?php
 include "formularios.php";
 include "pie.php";	
+
 ?>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() {
