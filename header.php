@@ -64,12 +64,20 @@ if (isset($_GET['erno2']) && $adentro==false) {
 					<li><a href="Talleres.php">Talleres</a></li>
 					<li><a href="Terapias.php">Terapias</a></li>
 					<li><a href="Espacios.php">Espacios</a></li>
-					<li class="active">
+					<li class="">
 						<a href="#" class="dropdown-trigger" data-target="exit">
 							<span class="name white-text "><?php echo $_SESSION["user"]; ?></span>
 							<i class="material-icons right">arrow_drop_down</i>
 						</a>
 					</li>
+					<?php
+						require ("conexiondb.php");
+						$sqlP="SELECT * FROM pre_pedido where Usuario="."'".$_SESSION["user"]."'";
+						$resultadoP=$base->prepare($sqlP);
+					    $resultadoP->execute();
+					    $Pr_Ex2=$resultadoP->rowCount();
+					?>
+					<li id="ID_Pe"><a href="Pedido.php">Pedido<span id="Pedido" class="new badge" data-badge-caption=""><?php echo $Pr_Ex2;?></span></a></li>
 				<?php }?>
 			</ul>
 			<!--Menu movil-->
