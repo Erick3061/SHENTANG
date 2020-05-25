@@ -7,7 +7,7 @@ include "header.php";
 		<div class="slider" style="margin-top: 10%; margin-bottom: 10%;">
 			<ul class="slides">
 				<li>
-					<img class="responsive-img" style="" src="Imagenes/EQUIPO.jpg">
+					<img class="responsive-img" src="Imagenes/EQUIPO.jpg">
 				</li>
 				<li>
 					<img class="responsive-img" src="Imagenes/PORTADA.jpg">
