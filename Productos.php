@@ -90,7 +90,7 @@ include "header.php";
             <div class='card-reveal'>
               <span style='font-weight: bold' class='card-title black-text text-darken-4 flow-textx'><i class='material-icons right'>close</i></span>
               <h5><?php echo $nomp; ?></h5>
-              <p style='font-weight: bold' class='green-text text-darken-2 flow-textx'>INFORMACION BASICA DEL PRODUCTO</p>
+              <p style='font-weight: bold' class='green-text text-darken-2 flow-textx'>INFORMACIÓN BASICA DEL PRODUCTO</p>
               <p>Cantidad: <?php echo $catp; ?></p>
               <p>Tipo de producto: <?php echo $presen; ?></p>
               <p>Precio: $<?php echo $costo; ?> MX</p>
