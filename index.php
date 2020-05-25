@@ -21,6 +21,7 @@ include "header.php";
 <?php
 include "formularios.php";
 include "pie.php";	
+$e;
 ?>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() {
