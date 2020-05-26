@@ -19,7 +19,7 @@ include "header.php";
 					<img class="responsive-img" src="Imagenes/EQUIPO.jpg">
 				</li>
 				<li>
-					<img src="">
+					<img src="Imagenes/COMERCIALES/IMAGEN ORGÁNICA2.jpg">
 					<div class="caption center-align">
 						
 					</div>
