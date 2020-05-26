@@ -50,7 +50,7 @@ if (isset($_GET['erno2']) && $adentro==false) {
 					<!-- CUANDO NO SE HA INICIADO SESION -->
 					<li>
 						<a href="#Registro" class="modal-trigger">
-							<span class="white-text">Iniciar Sesion</span>
+							<span class="white-text">Iniciar Sesión</span>
 						</a>
 					</li>
 					<li>
