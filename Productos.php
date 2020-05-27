@@ -162,7 +162,6 @@ include "header.php";
         url:"PHP/agregarPedido.php",
         success:function(respuesta){
           respuesta=respuesta.trim();
-          console.log(respuesta);
           $('#Pedido').text(respuesta);
         }
       });

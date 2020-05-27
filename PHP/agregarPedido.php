@@ -9,7 +9,7 @@
     $costo=$registro->PRECIO;
     $costo=$costo*$_POST["Cantidad"];
 	//Checa si existe el producto para añadir mas
-	$sql="SELECT * FROM pre_pedido where ID_Producto="."'".$_POST["ID"]."'";
+	$sql="SELECT * FROM pre_pedido where ID_Producto="."'".$_POST["ID"]."' and Usuario="."'".$_SESSION["user"]."'";
 	$resultado=$base->prepare($sql);
     $resultado->execute();
     $datosP=$resultado->fetch(PDO::FETCH_OBJ);

@@ -17,19 +17,22 @@ include "header.php";
 			<tbody>
 				<?php
 				require ("conexiondb.php");
-				$sql="SELECT NOMBRE,PRECIO, CantidadP,Subtotal FROM pre_pedido,productos where ID_Producto=IDP and Usuario="."'".$_SESSION["user"]."'";
+				$sql="SELECT ID_Producto,NOMBRE,PRECIO, CantidadP,Subtotal FROM pre_pedido,productos where ID_Producto=IDP and Usuario="."'".$_SESSION["user"]."'";
 				$resultado=$base->prepare($sql);
 				$resultado->execute();
 				while($registro=$resultado->fetch(PDO::FETCH_OBJ)){
-				?>
-				<tr>
-					<td><?php echo $registro->NOMBRE; ?></td>
-					<td><?php echo $registro->PRECIO; ?></td>
-					<td><?php echo $registro->CantidadP; ?></td>
-					<td><?php echo $registro->Subtotal; ?></td>
-					<td>Eliminar</td>
-				</tr>
-				<?php
+					?>
+					<tr id="<?php echo $registro->ID_Producto ?>">
+						<td><?php echo $registro->NOMBRE; ?></td>
+						<td><?php echo $registro->PRECIO; ?></td>
+						<td><?php echo $registro->CantidadP; ?></td>
+						<td><?php echo $registro->Subtotal; ?></td>
+						<td>
+							<span onclick="Eliminar(<?php echo "'".$registro->ID_Producto."'";?>)" class="btn-small orange" style="margin-left: 1px;">Eliminar
+							</span>
+						</td>
+					</tr>
+					<?php
 				}
 				?>
 			</tbody>
@@ -43,6 +46,20 @@ include "pie.php";
 ?>
 <script type="text/javascript">
 	$('#ID_Pe').addClass("active");
-    $('#ID_Pe1').addClass("active");
+	$('#ID_Pe1').addClass("active");
+	function Eliminar (ident) {
+		//alert(ident);
+		$.ajax({
+			method:"POST",
+			data:"ID="+ident,
+			url:"PHP/EliminarPedido.php",
+			success:function(respuesta){
+				respuesta=respuesta.trim();
+				console.log(respuesta);
+				$('#'+ident).remove();
+				$('#Pedido').text(respuesta);
+			}
+		});
+	}
 </script>
 
