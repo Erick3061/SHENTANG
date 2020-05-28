@@ -150,7 +150,6 @@ include "header.php";
     $('#ID_P').addClass("active");
     $('#ID_P1').addClass("active");
     function Agregar (nombre,id) {
-      alert($('#'+id).val());
       var cant=$('#'+id).val();
       var datos={
         "ID":id,
