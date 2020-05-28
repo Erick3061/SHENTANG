@@ -136,13 +136,8 @@
       <div class="section container">
         <div>
           <img class="responsive-img" src="Imagenes/SERVICIOS/RENTA DE ESPACIOS.jpg" alt="">
-          <div class="section white"></div>
-          <img class="responsive-img" src="Imagenes/SERVICIOS/ESPACIOS EN RENTA1.jpg" alt="">
-          <div class="section white"></div>
-          <div class="parallax-container">
-            <div class="parallax"><img class="responsive-img" src="Imagenes/SERVICIOS/CONSULTORIO RENTA1.jpg" alt=""> </div>
-          </div>
-          
+          <img class="responsive-img" src="Imagenes/SERVICIOS/ESPACIOS EN RENTA.jpg" alt="">
+          <img class="responsive-img" src="Imagenes/SERVICIOS/CONSULTORIO RENTA.jpg" alt="">
         </div>
         
       </div>

@@ -161,14 +161,9 @@ if(!isset($_SESSION["user"])){
     <div class="row container">
      <h2 class="header">Taller de la Prosperidad</h2>
      <p class="grey-text text-darken-3 lighten-3">Te invitamos a participar en el taller prosperidad para mejorar tu abundancia y prosperidad, incrementar tu clientela, hacer crecer tu negocio y mejorar tus finanzas en todos los aspectos. Trabajamos con herramientas de Grigori Gravovoi y programación cuántica.</p>
+     <img src="Imagenes/talleres/t5.jpg" style="width: 50%">
    </div>
  </div>
- <div class="Parallax-container">
-    <!-- <div class="parallax"><img src="Imagenes/talleres/t5.jpg"></div> -->
- </div>
-
- 
-
  <div class="parallax-container">
   <div class="parallax"><img src="Imagenes/talleres/t4.jpg"></div>
 </div>

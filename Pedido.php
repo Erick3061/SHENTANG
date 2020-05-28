@@ -14,7 +14,7 @@ include "header.php";
 					<th>Acciones</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody class="container">
 				<?php
 				require ("conexiondb.php");
 				$sql="SELECT ID_Producto,NOMBRE,PRECIO, CantidadP,Subtotal FROM pre_pedido,productos where ID_Producto=IDP and Usuario="."'".$_SESSION["user"]."'";
