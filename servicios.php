@@ -24,7 +24,8 @@ $ban=true;
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-              
+              <h6><?php echo $nombre;?></h6>
+              <p><?php echo $info;?></p>
             </div>
             <div class="card-action center-align">
               <a class="modal-trigger black-text" href="#<?php echo $nombre;?>">VER</a>
