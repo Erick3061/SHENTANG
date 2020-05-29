@@ -9,6 +9,7 @@ require("PHP/conexiondb.php");
     <div class="col l7 s10 offset-l3 offset-s1">
     </div>
   </div>
+<<<<<<< HEAD
 </div>
 <!--Fin de seccion 1-->
 
@@ -49,6 +50,16 @@ require("PHP/conexiondb.php");
 
 
 <div class="parallax-container">
+=======
+  <div class="section white">
+    <div class="row container">
+     <h2 class="header">Taller de la Prosperidad</h2>
+     <p class="grey-text text-darken-3 lighten-3">Te invitamos a participar en el taller prosperidad para mejorar tu abundancia y prosperidad, incrementar tu clientela, hacer crecer tu negocio y mejorar tus finanzas en todos los aspectos. Trabajamos con herramientas de Grigori Gravovoi y programación cuántica.</p>
+     <img src="Imagenes/talleres/t5.jpg" style="width: 50%">
+   </div>
+ </div>
+ <div class="parallax-container">
+>>>>>>> bfee7247b982e2e4e6b47b4075d253c0d9801ee5
   <div class="parallax"><img src="Imagenes/talleres/t4.jpg"></div>
 </div>
 <div class="section white">

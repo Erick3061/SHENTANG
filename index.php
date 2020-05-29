@@ -45,4 +45,3 @@ include "Vistas/pie.php";
 		});
 	});
 </script>
-

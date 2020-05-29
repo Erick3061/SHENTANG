@@ -132,6 +132,14 @@ if (isset($_GET['erno2']) && $adentro==false) {
 					<li><a href="Talleres.php">Talleres</a></li>
 					<li><a href="Terapias.php">Terapias</a></li>
 					<li><a href="Espacios.php">Espacios</a></li>
+					<?php
+						require ("conexiondb.php");
+						$sqlP="SELECT * FROM pre_pedido where Usuario="."'".$_SESSION["user"]."'";
+						$resultadoP=$base->prepare($sqlP);
+					    $resultadoP->execute();
+					    $Pr_Ex2=$resultadoP->rowCount();
+					?>
+					<li id="ID_Pe"><a href="Pedido.php">Pedido<span id="Pedido" class="new badge" data-badge-caption=""><?php echo $Pr_Ex2;?></span></a></li>
 					<!-- <li>
 						<a href="#" class="dropdown-trigger" data-target="id_drop">
 						Nosotros
