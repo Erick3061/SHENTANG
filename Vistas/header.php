@@ -48,7 +48,7 @@ if (isset($_GET['erno2']) && $adentro==false) {
 				<li><a href="servicios.php">Servicios</a></li>
 				<li><a href="Talleres.php">Talleres</a></li>
 				<li><a href="Terapias.php">Terapias</a></li>
-				<li><a href="Espacios.php">Espacios</a></li>
+				<li><a href="Espacios.php">Espacioos</a></li>
 				<?php if ($adentro==false){?>
 					<!-- CUANDO NO SE HA INICIADO SESION -->
 					<li>
