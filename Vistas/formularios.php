@@ -5,7 +5,7 @@
         <div class="modal-content">
           <h5 style="margin-bottom: 10%;" class="center-align">INICIAR SESION</h5>
           <p class="hide" id="Msg"></p>
-          <form id="login" action="login.php" name="creausr1" method="POST" >
+          <form id="login" action="PHP/Usuarios/login.php" name="creausr1" method="POST" >
             <div class="input-field">
               <input type="text" name="usuario" id="nombre" class="validate" required>
               <label for="nombre">USUARIO</label>
@@ -32,7 +32,7 @@
         <div class="modal-content">
           <h5 style="margin-bottom: 10%;" class="center-align">¿DE VERDAD DESEA CERRAR SESION?</h5>
           <p class="hide" id="Msg">Hola</p>
-          <form id="cerrar" action="cerrar.php" name="exit" method="POST">
+          <form id="cerrar" action="PHP/Usuarios/cerrar.php" name="exit" method="POST">
             <div class="center-align">
               <input class="btn-large waves-effect waves-ligth green" name="botoncs" type="submit" id="cs" value="SALIR">
             </div>
@@ -85,7 +85,7 @@
         <div class="modal-content">
           <h5 style="margin-bottom: 5%;" class="center-align">CREAR CUENTA</h5>
           <p class="hide center-align" id="Msg1"></p>
-          <form id="creausr" action="crearuser.php" name="creausr" method="POST" >
+          <form id="creausr" action="PHP/Usuarios/crearuser.php" name="creausr" method="POST" >
             <div class="input-field">
               <input type="text" name="nombre" id="nom" class="validate" required
               placeholder="Ingrese su nombre">
@@ -120,7 +120,7 @@
         <div class="modal-content">
           <h5 style="margin-bottom: 10%;" class="center-align">INGRESE SU CORREO ELECTRONICO</h5>
           <p class="hide" id="Msg">Hola</p>
-          <form id="creausr" action="mandarcorreo.php" name="sendemail" method="POST">
+          <form id="creausr" action="PHP/mandarcorreo.php" name="sendemail" method="POST">
             <div class="input-field">
               <input type="email" name="email" id="email" class="validate" required
               placeholder="Ingrese su email">
@@ -143,7 +143,7 @@
           </ul>
 
           <ul id="exit" class="dropdown-content">
-            <li><a a href="#Cerrarses" class="modal-trigger">Cerrar sesion</a></li>
+            <li><a href="#Cerrarses" class="modal-trigger">Cerrar sesion</a></li>
           </ul>
           <ul id="exit2" class="dropdown-content">
             <li><a a href="#Cerrarses" class="modal-trigger">Cerrar sesion</a></li>

@@ -1,5 +1,5 @@
 <?php
-require("conexiondb.php");
+require("../conexiondb.php");
 if(isset($_POST["botoncu"])){
     /* recibir los datos enviados de los formularios */
     $nombre=$_POST["nombre"];
@@ -30,15 +30,15 @@ if(isset($_POST["botoncu"])){
                 ob_start();
                 session_start();
                 $_SESSION["user"]=$_POST["usr"];
-                header("location:index.php");
+                header("location:../../index.php");
             }else{
-               header("Location: index.php?erno2=3"); 
+               header("Location: ../../index.php?erno2=3"); 
             }
         }else{
-            header("Location: index.php?erno2=2");
+            header("Location: ../../index.php?erno2=2");
         }
     }else{
-        header("Location: index.php?erno2=1");
+        header("Location: ../../index.php?erno2=1");
     }
 }
 ?>

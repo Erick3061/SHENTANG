@@ -3,7 +3,7 @@
 if(!$_GET){
   header('Location:Productos.php?pagina=1');
 }
-require ("conexiondb.php");
+require ("PHP/conexiondb.php");
 /* CONEXION A BASE DE DATOS CON PDO */
 /* consulta */
 $sql="select * from productos";
@@ -30,9 +30,9 @@ $resultado->bindParam(':numpro',$productos_x_pagina,PDO::PARAM_INT);
 $resultado->execute();
 ?>
 <?php
-include "header.php";
+include "Vistas/header.php";
 ?>
-<?php include "formularios.php"; ?>
+<?php include "Vistas/formularios.php"; ?>
 <!--Seccion 1 Menu de bsuqueda-->
 <div class="section">
   <h3 class="center">Nuestros productos</h3>
@@ -145,7 +145,7 @@ include "header.php";
       </li>
     </ul> 
   </div>
-  <?php include "pie.php"; ?>
+  <?php include "Vistas/pie.php"; ?>
   <script type="text/javascript">
     $('#ID_P').addClass("active");
     $('#ID_P1').addClass("active");
@@ -158,7 +158,7 @@ include "header.php";
       $.ajax({
         method: "POST",
         data:datos,
-        url:"PHP/agregarPedido.php",
+        url:"PHP/Productos/agregarPedido.php",
         success:function(respuesta){
           respuesta=respuesta.trim();
           $('#Pedido').text(respuesta);

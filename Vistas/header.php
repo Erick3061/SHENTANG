@@ -46,6 +46,9 @@ if (isset($_GET['erno2']) && $adentro==false) {
 			<ul class="right hide-on-med-and-down">
 				<li id="ID_P"><a href="Productos.php">Productos</a></li>
 				<li><a href="servicios.php">Servicios</a></li>
+				<li><a href="Talleres.php">Talleres</a></li>
+				<li><a href="Terapias.php">Terapias</a></li>
+				<li><a href="Espacios.php">Espacios</a></li>
 				<?php if ($adentro==false){?>
 					<!-- CUANDO NO SE HA INICIADO SESION -->
 					<li>
@@ -61,21 +64,30 @@ if (isset($_GET['erno2']) && $adentro==false) {
 					</li>
 				<?php }else{?>
 					<!-- CUANDO SE INICIO SESION -->
-					<li><a href="Talleres.php">Talleres</a></li>
-					<li><a href="Terapias.php">Terapias</a></li>
-					<li><a href="Espacios.php">Espacios</a></li>
+					
 					<?php
-						require ("conexiondb.php");
+						require ("PHP/conexiondb.php");
 						$sqlP="SELECT * FROM pre_pedido where Usuario="."'".$_SESSION["user"]."'";
 						$resultadoP=$base->prepare($sqlP);
 					    $resultadoP->execute();
 					    $Pr_Ex2=$resultadoP->rowCount();
+					    $sqlN="SELECT * FROM notificacion where User="."'".$_SESSION["user"]."'";
+					    $resultadoN=$base->prepare($sqlN);
+					    $resultadoN->execute();
+					    $NumNot=$resultadoN->rowCount();
 					?>
 					<li id="ID_Pe"><a href="Pedido.php">Pedido<span id="Pedido" class="new badge" data-badge-caption=""><?php echo $Pr_Ex2;?></span></a></li>
+
+					<li id="ID_Nt" style="">
+						<a href="Notificaciones.php">
+							<i style="width: 20%;" class="material-icons left">notifications</i>
+							<span id="Noti" class="new badge" data-badge-caption=""><?php echo $NumNot;?></span>
+						</a>
+					</li>
 					<li class="">
 						<a href="#" class="dropdown-trigger" data-target="exit">
 							<span class="name white-text "><?php echo $_SESSION["user"]; ?></span>
-							<i class="material-icons right">arrow_drop_down</i>
+							<i class="material-icons right ">arrow_drop_down</i>
 						</a>
 					</li>
 				<?php }?>

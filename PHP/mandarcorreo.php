@@ -18,7 +18,7 @@ $encabezado_a= 'Content-type: text/html; charset=iso-8859-1' . " ";
 
 /* --------------- */
 if($num==0){
-    header("Location:index.php?erno=10");
+    header("Location:../index.php?erno=10");
 }else{
     $registro=$resultado->fetch(PDO::FETCH_OBJ);
     $pass=$registro->PASSWORD;
@@ -27,8 +27,8 @@ if($num==0){
     //echo $pass;
     $mensaje="Disculpe la demora $nombre su usuario es: $user y su comtraeña es: $pass";
     //echo $mensaje;
-    mail($destinatrio, $asunto , $mensaje,$encabezado_a ) or die (header("Location:index.php?erno=10"));
-    header("Location:index.php?erno=11");
+    mail($destinatrio, $asunto , $mensaje,$encabezado_a ) or die (header("Location:../index.php?erno=10"));
+    header("Location:../index.php?erno=11");
 }
 
 

@@ -1,5 +1,5 @@
 <?php
-    require("conexiondb.php");
+    require("../conexiondb.php");
 
     $login=htmlentities(addslashes($_POST["usuario"]));
     $password=htmlentities(addslashes($_POST["password"]));
@@ -20,11 +20,11 @@
             ob_start();
             session_start();
             $_SESSION["user"]=$_POST["usuario"];
-            header("location:index.php");
+            header("location:../../index.php");
         }else{
-            header("Location:index.php?erno=1");
+            header("Location:../../index.php?erno=1");
         }
     }else{
-        header("Location: index.php?erno=2");
+        header("Location: ../../index.php?erno=2");
     }
 ?>

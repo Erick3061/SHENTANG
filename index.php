@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include "Vistas/header.php";
 ?>
 <div class="row" style="margin-top: 3%;margin-bottom: 3%;">
 	<div class="col s8 offset-s2">
@@ -31,8 +31,8 @@ include "header.php";
 
 
 <?php
-include "formularios.php";
-include "pie.php";	
+include "Vistas/formularios.php";
+include "Vistas/pie.php";	
 
 ?>
 <script type="text/javascript">
