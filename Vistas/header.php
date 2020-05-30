@@ -48,7 +48,7 @@ if (isset($_GET['erno2']) && $adentro==false) {
 				<li><a href="servicios.php">Servicios</a></li>
 				<li><a href="Talleres.php">Talleres</a></li>
 				<li><a href="Terapias.php">Terapias</a></li>
-				<li><a href="Espacios.php">Espacioos</a></li>
+				<li><a href="Espacios.php">Espacios</a></li>
 				<?php if ($adentro==false){?>
 					<!-- CUANDO NO SE HA INICIADO SESION -->
 					<li>
@@ -76,7 +76,11 @@ if (isset($_GET['erno2']) && $adentro==false) {
 					    $resultadoN->execute();
 					    $NumNot=$resultadoN->rowCount();
 					?>
-					<li id="ID_Pe"><a href="Pedido.php">Pedido<span id="Pedido" class="new badge" data-badge-caption=""><?php echo $Pr_Ex2;?></span></a></li>
+					<li id="ID_Pe">
+						<a href="Pedido.php">Pedido
+							<span id="Pedido" class="new badge" data-badge-caption=""><?php echo $Pr_Ex2;?></span>
+						</a>
+					</li>
 
 					<li id="ID_Nt" style="">
 						<a href="Notificaciones.php">

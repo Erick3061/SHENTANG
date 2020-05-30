@@ -35,7 +35,20 @@ include "Vistas/pie.php";
 		});
 	}
 	function HacerPedido(){
-		
+		//event.preventDefault();
+		$.ajax({
+			method: "POST",
+			data: $('#FrmDatos').serialize(),
+			url: "PHP/Productos/NuevoPedido.php",
+			success:function(respuesta){
+				respuesta=respuesta.trim();
+				console.log(respuesta);
+				$('#TablaPedido').load("PHP/Productos/ObtenerPedido.php");
+				$('#Pedido').text('0');
+				$('#Noti').text(respuesta);
+			}
+		});
+		return false;
 	}
 </script>
 

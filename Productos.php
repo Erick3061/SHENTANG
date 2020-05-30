@@ -100,7 +100,7 @@ include "Vistas/header.php";
                 if ($adentro==true) {
                   ?>
                   <label>Cantidad:</label>
-                  <input id="<?php echo $id ?>" type="number" name="cantidad" value="1" max="10" min="1">
+                  <input id="<?php echo $id ?>" type="number" name="cantidad" value="1" max="<?php echo $registro->stock; ?>" min="1">
                   <span onclick="Agregar(<?php echo "'".$nomp."',"; echo "'".$id."'"; ?>)" class="btn-floating  waves-effect waves-light green right" style="margin-top: 15%;">
                     <i class="material-icons">add_shopping_cart</i>
                   </span>
@@ -150,19 +150,30 @@ include "Vistas/header.php";
     $('#ID_P').addClass("active");
     $('#ID_P1').addClass("active");
     function Agregar (nombre,id) {
-      var cant=$('#'+id).val();
-      var datos={
-        "ID":id,
-        "Cantidad":cant
-      }
-      $.ajax({
-        method: "POST",
-        data:datos,
-        url:"PHP/Productos/agregarPedido.php",
-        success:function(respuesta){
-          respuesta=respuesta.trim();
-          $('#Pedido').text(respuesta);
+      var Stk=parseInt($('#'+id).attr("max"));
+      var cant=parseInt($('#'+id).val());
+      //console.log("wi");
+      if (cant > Stk || cant<1) {
+        M.toast({html: 'Cantidad erronea'});
+      }else{
+        var datos={
+          "ID":id,
+          "Cantidad":cant
         }
-      });
+        $.ajax({
+          method: "POST",
+          data:datos,
+          url:"PHP/Productos/agregarPedido.php",
+          success:function(respuesta){
+            respuesta=respuesta.trim();
+            if (respuesta=="error") {
+              M.toast({html: 'No hay mas stock'});
+            }else{
+               M.toast({html: 'Agregado'});
+              $('#Pedido').text(respuesta);
+            }
+          }
+        });
+      }
     }
   </script>

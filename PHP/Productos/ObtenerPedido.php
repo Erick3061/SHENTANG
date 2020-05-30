@@ -37,6 +37,7 @@ if ($NumF>0) {
 						</td>
 					</tr>
 					<input type='checkbox' checked='checked' class='hide' name='Ids[]' value="<?php echo $registro->ID_Producto ?>">
+					<input type='checkbox' checked='checked' class='hide' name='Cant[]' value="<?php echo $registro->CantidadP ?>">
 					<?php
 				}	
 				?>
