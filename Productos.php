@@ -171,6 +171,7 @@ include "Vistas/header.php";
             }else{
                M.toast({html: 'Agregado'});
               $('#Pedido').text(respuesta);
+              $('#Pedido1').text(respuesta);
             }
           }
         });

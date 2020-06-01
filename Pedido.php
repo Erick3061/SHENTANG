@@ -45,7 +45,9 @@ include "Vistas/pie.php";
 				console.log(respuesta);
 				$('#TablaPedido').load("PHP/Productos/ObtenerPedido.php");
 				$('#Pedido').text('0');
+				$('#Pedido1').text('0');
 				$('#Noti').text(respuesta);
+				$('#Noti1').text(respuesta);
 			}
 		});
 		return false;

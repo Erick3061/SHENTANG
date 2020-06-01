@@ -71,7 +71,7 @@ if (isset($_GET['erno2']) && $adentro==false) {
 						$resultadoP=$base->prepare($sqlP);
 					    $resultadoP->execute();
 					    $Pr_Ex2=$resultadoP->rowCount();
-					    $sqlN="SELECT * FROM notificacion where User="."'".$_SESSION["user"]."'";
+					    $sqlN="SELECT * FROM notificacion where estado=0 and User="."'".$_SESSION["user"]."'";
 					    $resultadoN=$base->prepare($sqlN);
 					    $resultadoN->execute();
 					    $NumNot=$resultadoN->rowCount();
@@ -141,7 +141,19 @@ if (isset($_GET['erno2']) && $adentro==false) {
 						Nosotros
 						<i class="material-icons right">arrow_drop_down</i></a>
 					</li> -->
-					<li class="active">
+					<li id="ID_Pe1">
+						<a href="Pedido.php">Pedido
+							<span id="Pedido1" class="new badge right" data-badge-caption=""><?php echo $Pr_Ex2;?></span>
+						</a>
+					</li>
+
+					<li id="ID_Nt1" style="">
+						<a href="Notificaciones.php">
+							<i class="material-icons">notifications</i>
+							<span id="Noti1" class="new badge right" data-badge-caption=""><?php echo $NumNot;?></span>
+						</a>
+					</li>
+					<li class="">
 						<a href="#" class="dropdown-trigger" data-target="exit2">
 							<span class="name black-text "><?php echo $_SESSION["user"]; ?></span>
 							<i class="material-icons right">arrow_drop_down</i>

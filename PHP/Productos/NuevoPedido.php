@@ -42,17 +42,16 @@
     $resultado=$base->prepare($sql);
     $resultado->execute();
     $mensaje="Tu pedido esta en proceso por favor espere la notificacion para poder recoger tus productos Gracias por comprar en Shentang";
+    $tipo="Nuevo pedido";
     //Generar notificacion
-    $sqlN="INSERT INTO notificacion (User,Asunto) VALUES ("."'".$_SESSION["user"]."','".$mensaje."')";
+    $sqlN="INSERT INTO notificacion (User,Asunto,tipo) VALUES ("."'".$_SESSION["user"]."','".$mensaje."','".$tipo."')";
     $resultadoN=$base->prepare($sqlN);
     $resultadoN->execute();
 
-    $sql="SELECT * FROM notificacion WHERE User="."'".$_SESSION["user"]."'";
+    $sql="SELECT * FROM notificacion WHERE estado=0 and  User="."'".$_SESSION["user"]."'";
     $exe=$base->prepare($sql);
     $exe->execute();
     $datosP=$exe->fetch(PDO::FETCH_OBJ);
     $NumN=$exe->rowCount();
     print_r($NumN);
-	//print_r($_POST['Cant']);
-	//print_r($_POST['Ids']);
 ?>
