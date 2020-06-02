@@ -19,11 +19,19 @@ if (isset($_GET['erno2']) && $adentro==false) {
 <html>
 <head>
 	<title></title>
-	<!-- Compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-	<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="CSS/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="CSS/jquery.dataTables.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="CSS/buttons.dataTables.min.css" media="screen,projection">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script type="text/javascript" src="Librerias/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="Librerias/materialize.min.js"></script>
+	<script type="text/javascript" src="Librerias/sweetalert.min.js"></script>
+	<script type="text/javascript" src="Librerias/datatable/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="Librerias/datatable/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="Librerias/datatable/jszip.min.js"></script>
+	<script type="text/javascript" src="Librerias/datatable/pdfmake.min.js"></script>
+	<script type="text/javascript" src="Librerias/datatable/vfs_fonts.js"></script>
+	<script type="text/javascript" src="Librerias/datatable/buttons.html5.min.js"></script>
 
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

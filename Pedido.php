@@ -48,6 +48,7 @@ include "Vistas/pie.php";
 				$('#Pedido1').text('0');
 				$('#Noti').text(respuesta);
 				$('#Noti1').text(respuesta);
+				swal("Status","Peido enviado exitosamente","success");
 			}
 		});
 		return false;

@@ -23,6 +23,7 @@
                 ob_start();
                 session_start();
                 $_SESSION["user"]=$_POST["usuario"];
+                $_SESSION["per"]=2;
                 header("location:../../admin.php");
             }else{
                 ob_start();
