@@ -79,12 +79,12 @@ include "Vistas/header.php";
           ?>
           <!--Listado de los productos-->
           <div class="col s10 offset-s1 l4">
-            <div class='card large'>
+            <div class='card medium'>
               <div class='card-image waves-effect waves-block waves-light'>
                 <img class='activator' src='Imagenes/PRODUCTOS/<?php echo $nomp; ?>.jpg'>
               </div>
               <div class='card-content' >
-                <span class='card-title activator grey-text text-darken-4'><a href='producto.php?idproducto=<?php echo $id; ?>&nump=<?php echo $numpagina; ?>&img=<?php echo $contador; ?>'><?php echo $nomp; ?></a><i class='material-icons right'>more_vert</i></span>
+                <span class='card-title activator grey-text text-darken-4'><?php echo $nomp; ?><i class='material-icons right'>more_vert</i></span>
               </div>
 
               <div class='card-reveal'>

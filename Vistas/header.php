@@ -33,22 +33,20 @@ if (isset($_GET['erno2']) && $adentro==false) {
 <body>
 	<nav class="green">
 		<div class="nav-wrapper container">
-			<a href="index.php" class="brand-logo col sl3 hide-on-med-and-down">
-				<img class="circle responsive-img" src="Imagenes/logop.png">
+			<a href="index.php" class="brand-logo">
+				<img style="height: 55px;" class="responsive-img" src="Imagenes/LGP.png">
 			</a>
-			<a href="index.php" class="brand-logo col s12 hide-on-large-only">
-				<img class="circle responsive-img" src="Imagenes/logop1.png">
-			</a>
+			
 			<a href="#" data-target="menu-side" class="sidenav-trigger">
 				<i class="material-icons">menu</i>
 			</a>
 			<!--Menu desktop-->
 			<ul class="right hide-on-med-and-down">
 				<li id="ID_P"><a href="Productos.php">Productos</a></li>
-				<li><a href="servicios.php">Servicios</a></li>
+				<li id="ID_Se"><a href="servicios.php">Servicios</a></li>
 				<li><a href="Talleres.php">Talleres</a></li>
 				<li><a href="Terapias.php">Terapias</a></li>
-				<li><a href="Espacios.php">Espacios</a></li>
+				<li id="ID_Esp"><a href="Espacios.php">Espacios</a></li>
 				<?php if ($adentro==false){?>
 					<!-- CUANDO NO SE HA INICIADO SESION -->
 					<li>
@@ -76,16 +74,11 @@ if (isset($_GET['erno2']) && $adentro==false) {
 					    $resultadoN->execute();
 					    $NumNot=$resultadoN->rowCount();
 					?>
-					<li id="ID_Pe">
-						<a href="Pedido.php">Pedido
-							<span id="Pedido" class="new badge" data-badge-caption=""><?php echo $Pr_Ex2;?></span>
-						</a>
-					</li>
-
-					<li id="ID_Nt" style="">
-						<a href="Notificaciones.php">
-							<i style="width: 20%;" class="material-icons left">notifications</i>
-							<span id="Noti" class="new badge" data-badge-caption=""><?php echo $NumNot;?></span>
+				
+					<li class="">
+						<a href="#" class="dropdown-trigger" data-target="modalop">
+							<span class="white-text">Mis acciones</span>
+							<i class="material-icons right ">arrow_drop_down</i>
 						</a>
 					</li>
 					<li class="">
@@ -118,6 +111,9 @@ if (isset($_GET['erno2']) && $adentro==false) {
 				<!--Content-->
 				<li id="ID_P1"><a href="Productos.php">Productos</a></li>
 				<li><a href="servicios.php">Servicios</a></li>
+				<li><a href="Talleres.php">Talleres</a></li>
+				<li><a href="Terapias.php">Terapias</a></li>
+				<li id="ID_Esp1"><a href="Espacios.php">Espacios</a></li>
 				<?php if ($adentro==false){?>
 					<!-- CUANDO NO SE HA INICIADO SESION -->
 					<li>
@@ -133,9 +129,6 @@ if (isset($_GET['erno2']) && $adentro==false) {
 					</li>
 				<?php }else{?>
 					<!-- CUANDO SE INICIO SESION -->
-					<li><a href="Talleres.php">Talleres</a></li>
-					<li><a href="Terapias.php">Terapias</a></li>
-					<li><a href="Espacios.php">Espacios</a></li>
 					<!-- <li>
 						<a href="#" class="dropdown-trigger" data-target="id_drop">
 						Nosotros

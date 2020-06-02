@@ -2,21 +2,14 @@
 include "Vistas/header.php";
 require("PHP/conexiondb.php");
 ?>
-<!--Seccion 1-->
-<div class="section">
-  <h3 class="center">Nuestros talleres</h3>
-  <div class="row">
-    <div class="col l7 s10 offset-l3 offset-s1">
-    </div>
-  </div>
-</div>
+
 <!--Fin de seccion 1-->
 
 <!--Seccion 2-->
 
 <!--Columna media (Contenido)-->
 <div class="parallax-container">
-  <div class="parallax"><img src="Imagenes/talleres/t1.jpg"></div>
+  <div class="parallax"><img src="Imagenes/talleres/1.jpg"></div>
 </div>
 <div class="section white">
   <div class="row container">
