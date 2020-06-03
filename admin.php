@@ -50,23 +50,4 @@ if (isset($_SESSION['user']) and isset( $_SESSION['per'])) {
       height: 500
     });
   });
-  function cerrar () {
-    swal({
-      title: "Cerrar sesión",
-      text: "¿Deseas cerrar sesión?",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        swal("Cerrando sesion", {
-          icon: "success",
-        });
-        window.location.assign("PHP/Usuarios/cerrar.php");
-      } else {
-        swal("No se ah cerrado sesion");
-      }
-    });
-  }
 </script>

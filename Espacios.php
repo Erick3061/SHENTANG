@@ -44,7 +44,7 @@ include "Vistas/pie.php";
 
 ?>
 <script type="text/javascript">
-  $('#ID_Esp').addClass("active");
+  $('#ID_Esp').addClass("active brown lighten-4");
   $('#ID_Esp1').addClass("active");
   var sc=0;
   if (screen.width < 1024) 

@@ -17,7 +17,7 @@ function agregarServicioNuevo () {
 }
 function eliminarServicio(id){
 	swal({
-		title: "Deseas elimianr este servicio?",
+		title: "¿Deseas eliminar este servicio?",
 		text: "Una vez eliminado no podra recuperar este servicio",
 		icon: "warning",
 		buttons: true,

@@ -67,5 +67,5 @@ include "Vistas/formularios.php";
 include "Vistas/pie.php";
 ?>
 <script type="text/javascript">
-  $('#ID_Se').addClass("active");
+  $('#ID_Se').addClass("active brown lighten-4");
 </script>

@@ -1,4 +1,4 @@
-<footer class="page-footer green">
+<footer class="page-footer light-green lighten-2">
 	<div class="container">
 		<div class="row">
 			<div class="col l6 s12">
@@ -39,4 +39,23 @@
   document.addEventListener('DOMContentLoaded', function(){
     M.AutoInit();
   });
+  function cerrar () {
+    swal({
+      title: "Cerrar sesión",
+      text: "¿Deseas cerrar sesión?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Cerrando sesion", {
+          icon: "success",
+        });
+        window.location.assign("PHP/Usuarios/cerrar.php");
+      } else {
+        swal("No se ah cerrado sesion");
+      }
+    });
+  }
 </script>

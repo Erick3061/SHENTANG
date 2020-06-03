@@ -5,12 +5,12 @@ require("../../PHP/conexiondb.php");
 <div  id="prin" class="row">
 	<div class="col col s12 m10 offset-m1  l10 offset-l1">
 		<!--<a href="#"  onclick="enviar();" class="btn">Enviar</a>-->
-		<table class="responsive-table highlight centered blue" id="GestorDatatable">
-			<thead class="green lighten-3">
+		<table class="responsive-table highlight centered " id="GestorDatatable">
+			<thead class="deep-purple lighten-4">
 				<tr>
 					<th class="hide">ID</th>
 					<th>Nombre</th>
-					<th>Descripcion</th>
+					<th class="">Descripcion</th>
 					<th>Precio</th>
 					<th>Personas</th>
 					<th>Sesiones</th>

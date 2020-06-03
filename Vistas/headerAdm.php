@@ -25,7 +25,7 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-	<nav class="green">
+	<nav class="light-green lighten-2">
 		<div class="nav-wrapper container">
 			<a href="admin.php" class="brand-logo">
 				<img style="height: 55px;" class="responsive-img" src="Imagenes/LGP.png">

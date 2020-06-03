@@ -147,7 +147,7 @@ include "Vistas/header.php";
   </div>
   <?php include "Vistas/pie.php"; ?>
   <script type="text/javascript">
-    $('#ID_P').addClass("active");
+    $('#ID_P').addClass("active brown lighten-4");
     $('#ID_P1').addClass("active");
     function Agregar (nombre,id) {
       var Stk=parseInt($('#'+id).attr("max"));

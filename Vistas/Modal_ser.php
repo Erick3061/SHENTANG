@@ -25,7 +25,7 @@
 					<label for="Ses">Sesiones</label>
 				</div>
 				<div class="col s12">
-					<button class="center btn btn-large">Registrar</button>
+					<button class="center btn btn-large amber lighten-1">Registrar</button>
 				</div>
 			</form>
 		</div>
@@ -65,7 +65,7 @@
 					<label for="Ses1">Sesiones</label>
 				</div>
 				<div class="col s12">
-					<button class="center btn btn-large">Modificar</button>
+					<button class="center btn btn-large amber lighten-1">Modificar</button>
 				</div>
 			</form>
 		</div>
