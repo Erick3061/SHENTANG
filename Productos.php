@@ -35,18 +35,9 @@ include "Vistas/header.php";
 <?php include "Vistas/formularios.php"; ?>
 <!--Seccion 1 Menu de bsuqueda-->
 <div class="section">
-  <h3 class="center">Nuestros productos</h3>
+  <h3 class="center teal-text darken-4">Nuestros productos</h3>
   <div class="row">
     <div class="col l7 s10 offset-l3 offset-s1">
-      <!--<div class="nav-wrapper">
-        <form>
-          <div class="input-field">
-            <input id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-          </div>
-        </form>
-      </div>-->
     </div>
   </div>
 </div>
