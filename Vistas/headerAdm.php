@@ -60,7 +60,7 @@ session_start();
 				</li>
 				<!--Content-->
 				<li id="ID_P1"><a href="ProductosA.php">Productos</a></li>
-				<li><a href="serviciosA.php">Servicios</a></li>
+				<li><a href="Administrar_Servicios.php">Servicios</a></li>
 				<li><a href="TalleresA.php">Talleres</a></li>
 				<li><a href="TerapiasA.php">Terapias</a></li>
 				<!-- CUANDO NO SE HA INICIADO SESION -->

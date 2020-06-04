@@ -75,9 +75,11 @@ include "Vistas/header.php";
                 <img class='activator' src='Imagenes/PRODUCTOS/<?php echo $nomp; ?>.jpg'>
               </div>
               <div class='card-content' >
-                <span class='card-title activator grey-text text-darken-4'><?php echo $nomp; ?><i class='material-icons right'>more_vert</i></span>
+                <span class='card-title activator cyan-text darken-4'>
+                  <a href="#modalI" class="modal-trigger" onclick="MostarInfo(<?php echo "'".$nomp."',"; echo "'".$caract."'" ?>)"><?php echo $nomp; ?></a>
+                  <i class='material-icons right black-text'>more_vert</i>
+                </span>
               </div>
-
               <div class='card-reveal'>
                 <span style='font-weight: bold' class='card-title black-text text-darken-4 flow-textx'><i class='material-icons right'>close</i></span>
                 <h5><?php echo $nomp; ?></h5>
@@ -117,6 +119,17 @@ include "Vistas/header.php";
 </div>
 <!--Finaliza Seccion1-->
 
+<!--Modal-->
+<div id="modalI" class="modal">
+  <div class="modal-content">
+    <h4 id="Titulo">Modal Header</h4>
+    <p id="Conte">A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+  </div>
+</div>
+<!--Fin modal-->
 <!-- paginacion -->   
 <div class="center-align">
   <ul class="pagination">
@@ -125,47 +138,59 @@ include "Vistas/header.php";
         <i class="material-icons">chevron_left</i>
       </a>
     </li>
-    <?php for($i=0;$i<$paginas;$i++){ ?>
+    <?php 
+    for($i=0;$i<$paginas;$i++){ 
+      ?>
       <li class="<?php echo $_GET['pagina']==$i+1 ? 'active' : '' ?>">
-        <a href="Productos.php?pagina=<?php echo $i+1;?>"><?php echo $i+1; ?></a></li>
-      <?php } ?> 
-      <li class="waves-effect <?php echo $_GET['pagina']>=$paginas ? 'scale-transition scale-out' : 'scale-transition'?>">
-        <a href="Productos.php?pagina=<?php echo $_GET['pagina']+1 ?>">
-          <i class="material-icons">chevron_right</i>
-        </a>
+        <a href="Productos.php?pagina=<?php echo $i+1;?>"><?php echo $i+1; ?></a>
       </li>
-    </ul> 
-  </div>
-  <?php include "Vistas/pie.php"; ?>
-  <script type="text/javascript">
-    $('#ID_P').addClass("active brown lighten-4");
-    $('#ID_P1').addClass("active");
-    function Agregar (nombre,id) {
-      var Stk=parseInt($('#'+id).attr("max"));
-      var cant=parseInt($('#'+id).val());
-      //console.log("wi");
-      if (cant > Stk || cant<1) {
-        M.toast({html: 'Cantidad erronea'});
-      }else{
-        var datos={
-          "ID":id,
-          "Cantidad":cant
-        }
-        $.ajax({
-          method: "POST",
-          data:datos,
-          url:"PHP/Productos/agregarPedido.php",
-          success:function(respuesta){
-            respuesta=respuesta.trim();
-            if (respuesta=="error") {
-              M.toast({html: 'No hay mas stock'});
-            }else{
-               M.toast({html: 'Agregado'});
-              $('#Pedido').text(respuesta);
-              $('#Pedido1').text(respuesta);
-            }
-          }
-        });
+      <?php
+    } 
+    ?> 
+    <li class="waves-effect <?php echo $_GET['pagina']>=$paginas ? 'scale-transition scale-out' : 'scale-transition'?>">
+      <a href="Productos.php?pagina=<?php echo $_GET['pagina']+1 ?>">
+        <i class="material-icons">chevron_right</i>
+      </a>
+    </li>
+  </ul> 
+</div>
+<?php include "Vistas/pie.php"; ?>
+<script type="text/javascript">
+  $('#ID_P').addClass("active brown lighten-4");
+  $('#ID_P1').addClass("active");
+
+  function MostarInfo(nombre,cont){
+    $('#Titulo').text(nombre);
+    $('#Conte').text(cont);
+    //$('#modalI').modal();
+    //$('#modalI').modal('open');
+  }
+  function Agregar (nombre,id) {
+    var Stk=parseInt($('#'+id).attr("max"));
+    var cant=parseInt($('#'+id).val());
+    //console.log("wi");
+    if (cant > Stk || cant<1) {
+      M.toast({html: 'Cantidad erronea'});
+    }else{
+      var datos={
+        "ID":id,
+        "Cantidad":cant
       }
+      $.ajax({
+        method: "POST",
+        data:datos,
+        url:"PHP/Productos/agregarPedido.php",
+        success:function(respuesta){
+          respuesta=respuesta.trim();
+          if (respuesta=="error") {
+            M.toast({html: 'No hay mas stock'});
+          }else{
+           M.toast({html: 'Agregado'});
+           $('#Pedido').text(respuesta);
+           $('#Pedido1').text(respuesta);
+         }
+       }
+     });
     }
-  </script>
+  }
+</script>
