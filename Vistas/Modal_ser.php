@@ -1,7 +1,11 @@
 <!--Modla nuevo servicio-->
 <div id="modal1" class="modal">
 	<div class="modal-content">
+<<<<<<< HEAD
 		<h5>Nuevo servicio</h5> 
+=======
+		<h5>Nuevo servicio</h5>
+>>>>>>> cc978a284f1a8a8d953a7c2cbe6c173b39d4ec6a
 		<div class="row">
 			<form id="FormSer" method="POST" onsubmit="return agregarServicioNuevo()">
 				<div class="input-field col s12 l6">

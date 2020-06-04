@@ -18,7 +18,11 @@ require("../../PHP/conexiondb.php");
 				</tr>
 			</thead>
 			<tbody>
+<<<<<<< HEAD
 				<?php 
+=======
+				<?php
+>>>>>>> cc978a284f1a8a8d953a7c2cbe6c173b39d4ec6a
 				$sql="SELECT * FROM servicios";
 				$resultado=$base->prepare($sql);
 				$resultado->execute();
