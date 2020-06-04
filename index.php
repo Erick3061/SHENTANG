@@ -1,13 +1,14 @@
 <?php
-include "header.php";
+include "Vistas/header.php";
 ?>
+
 <div class="row" style="margin-top: 3%;margin-bottom: 3%;">
-	<div class="col s8 offset-s2">
+	<div class="col s12 m8 offset-m2">
 		<div class="slider">
 			<ul class="slides">
 				<li>
 					<img src="Imagenes/EQUIPO.jpg">
-					<div class="caption center-align">
+					<div class="caption down-align">
 						
 					</div>
 				</li>
@@ -31,8 +32,8 @@ include "header.php";
 
 
 <?php
-include "formularios.php";
-include "pie.php";	
+include "Vistas/formularios.php";
+include "Vistas/pie.php";	
 
 ?>
 <script type="text/javascript">
@@ -45,3 +46,4 @@ include "pie.php";
 		});
 	});
 </script>
+
