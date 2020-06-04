@@ -5,15 +5,15 @@ require("../../PHP/conexiondb.php");
 <div  id="prin" class="row">
 	<div class="col col s12 m10 offset-m1  l10 offset-l1">
 		<!--<a href="#"  onclick="enviar();" class="btn">Enviar</a>-->
-		<table class="responsive-table highlight centered " id="GestorDatatable">
+		<table class="responsive-table " id="GestorDatatable">
 			<thead class="deep-purple lighten-4">
 				<tr>
-					<th class="hide">ID</th>
 					<th>Nombre</th>
-					<th class="">Descripcion</th>
+					<th >Descripcion</th>
 					<th>Precio</th>
 					<th>Personas</th>
 					<th>Sesiones</th>
+					<th>Horarios</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -25,11 +25,21 @@ require("../../PHP/conexiondb.php");
 				while($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 					?>
 					<tr>
-						<td class="hide"><?php echo $registro->ID_Ser; ?></td>
 						<td><?php echo $registro->nombre; ?></td>
 						<td><?php echo $registro->contenido; ?></td>
-						<td><?php echo $registro->precio; ?></td>
+						<td>$<?php echo $registro->precio; ?></td>
 						<td><?php echo $registro->Max_Per; ?></td>
+						<td>
+							<?php
+								$sqlH="SELECT * FROM sesiones WHERE ID_serv=".$registro->ID_Ser;
+								$resultadoH=$base->prepare($sqlH);
+								$resultadoH->execute();
+								while ($registroH=$resultadoH->fetch(PDO::FETCH_OBJ)) {
+									echo $registroH->Hora;
+									echo "<br>";
+								}
+							?>
+						</td>
 						<td><?php echo $registro->Sesiones; ?></td>
 						<td>
 							<?php

@@ -21,8 +21,11 @@
 					<label for="MaxP">Personas</label>
 				</div>
 				<div class="input-field col s12 l6">
-					<input id="Ses" name="Ses" type="number" class="validate" required>
+					<input onchange="AgregarCampos()" id="Ses" name="Ses" type="number" class="validate" required>
 					<label for="Ses">Sesiones</label>
+				</div>
+				<div id="Nuevos">
+					
 				</div>
 				<div class="col s12">
 					<button class="center btn btn-large amber lighten-1">Registrar</button>
@@ -61,8 +64,11 @@
 					<label for="MaxP1">Personas</label>
 				</div>
 				<div class="input-field col s12 l6">
-					<input placeholder="" id="Ses1" name="Ses1" type="number" class="validate" required>
+					<input onchange="AgregarCamposE()" placeholder="" id="Ses1" name="Ses1" type="number" class="validate" required>
 					<label for="Ses1">Sesiones</label>
+				</div>
+				<div id="NuevosE">
+					
 				</div>
 				<div class="col s12">
 					<button class="center btn btn-large amber lighten-1">Modificar</button>

@@ -37,9 +37,16 @@ session_start();
 			<ul class="right hide-on-med-and-down">
 				<li id="ID_PA"><a href="Administrar_Productos.php">Productos</a></li>
 				<li id="ID_SeA"><a href="Administrar_Servicios.php">Servicios</a></li>
+<<<<<<< HEAD
 				<li id="ID_Ta"><a href="Administrar_Talleres.php">Talleres</a></li>
 				<li id="ID_Te"><a href="Administrar_Terapias.php">Terapias</a></li>
 				<li id="ID_U"><a href="Administrar_Usuarios.php">Usuarios</a></li>
+=======
+
+				<li id="ID_Ta"><a href="Administrar_Talleres.php">Talleres</a></li>
+				<li id="ID_Te"><a href="Administrar_Terapias.php">Terapias</a></li>
+
+>>>>>>> 0ac9f6f5890501b6a0eb87a1c9e050c21a2e88d1
 				<li>
 					<a href="#" onclick="cerrar()">Cerrar sesion</a>
 				</li>
@@ -60,6 +67,7 @@ session_start();
 					</div>
 				</li>
 				<!--Content-->
+<<<<<<< HEAD
 				<li id="ID_PA"><a href="Administrar_Productos.php">Productos</a></li>
 				<li id="ID_SeA"><a href="Administrar_Servicios.php">Servicios</a></li>
 				<li id="ID_Ta"><a href="Administrar_Talleres.php">Talleres</a></li>
@@ -71,6 +79,12 @@ session_start();
 				<li>
 					<a href="#"><?php echo $_SESSION['user'] ?></a>
 				</li>
+=======
+				<li id="ID_P1"><a href="ProductosA.php">Productos</a></li>
+				<li><a href="Administrar_Servicios.php">Servicios</a></li>
+				<li><a href="TalleresA.php">Talleres</a></li>
+				<li><a href="TerapiasA.php">Terapias</a></li>
+>>>>>>> 0ac9f6f5890501b6a0eb87a1c9e050c21a2e88d1
 				<!-- CUANDO NO SE HA INICIADO SESION -->
 			
 			</ul>

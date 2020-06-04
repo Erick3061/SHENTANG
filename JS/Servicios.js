@@ -53,13 +53,22 @@ function obteberDatosServ (id) {
 		success: function(respuesta){
 			respuesta = jQuery.parseJSON(respuesta);
 			$("#FormSerM")[0].reset();
-            M.updateTextFields();
-            $('#IDS').val(respuesta['ID']);
+			M.updateTextFields();
+			$('#IDS').val(respuesta['ID']);
 			$('#nombre1').val(respuesta['Nombre']);
 			$('#Cont1').val(respuesta['Contenido']);
 			$('#precio1').val(respuesta['Precio']);
 			$('#MaxP1').val(respuesta['Personas']);
 			$('#Ses1').val(respuesta['Sesiones']);
+			$('#NuevosE').empty();
+			for (var i = 0; i < respuesta['Sesiones']; i++) {
+				dvsI='<div class="input-field col s12 l6">';
+				int='<input id="SesE'+i+'" name="SesE'+i+'" type="text" class="validate" required>';
+				lbl='<label for="SesE'+i+'">Horario '+(i+1)+'</label>';
+				dvsE='</div>'
+				campo = dvsI+int+lbl+dvsE;
+				$("#NuevosE").append(campo); 
+			}
 		}
 	});
 }

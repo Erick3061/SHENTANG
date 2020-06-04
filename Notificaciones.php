@@ -4,29 +4,39 @@ require ("PHP/conexiondb.php");
 ?>
 <div class="row" style="margin-top: 1%;margin-bottom: 3%;">
 	<div class="col s12 m10 offset-m1">
-		<div class="col s10 offset-s1">
+		<div class="col s12" style="margin-bottom: 5%;">
 			<h4>Notificaciones:</h4>
 		</div>
 		<?php
-		$sql="SELECT * FROM notificacion WHERE User ="."'".$_SESSION["user"]."' ORDER BY fecha ASC";
+		$sql="SELECT * FROM notificacion WHERE User ="."'".$_SESSION["user"]."' ORDER BY fecha DESC";
 		$exe=$base->prepare($sql);
 		$exe->execute();
 		while($registro=$exe->fetch(PDO::FETCH_OBJ)){
 			?>
-			<div class="col s10 offset-m1 m8 offset-m2">
-				<h5  style=" cursor: pointer;" onclick="muestra(<?php echo $registro->ID_Not; ?>)">
-					<div id="<?php echo 'SN'.$registro->ID_Not;?>">
-						<?php 
-						if ($registro->estado==0) {
-							echo '<i class="material-icons red-text left">announcement</i>';
-						}
-						?>
-					</div>
-					<?php echo $registro->tipo."   ".$registro->fecha; ?>		
-				</h5>
+			<div class="row">
+				<div class="col s10 m3 offset-m1 offset-s1" style="margin-top: -3%;">
+					<ul class="collection" style=" cursor: pointer;" onclick="muestra(<?php echo $registro->ID_Not; ?>)">
+						<li class="collection-item avatar amber lighten-5">
+							<span ><?php echo $registro->tipo; ?></span>
+							<p><?php echo $registro->fecha; ?></p>
+							<div id="<?php echo 'SN'.$registro->ID_Not;?>">
+								<?php
+								if ($registro->estado==0) {
+									echo '<i class="secondary-content material-icons red-text left">announcement</i>';
+								}
+								?>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="<?php echo $registro->ID_Not.'1'; ?>" class="hide-on-small-only col m7 light-green lighten-4" style="margin-top: -2%; border-radius: 10px; display: none">
+					<p><?php echo $registro->Asunto;  ?></p>
+				</div>
 			</div>
-			<div id="<?php echo $registro->ID_Not ?>" class="col s10 offset-s1 m8 offset-m2" style="background-color: rgba(0,255,0,0.3); border-radius: 10px; display: none">
-				<p><?php echo $registro->Asunto;  ?></p>
+			<div class="row hide-on-med-and-up">
+				<div id="<?php echo $registro->ID_Not ?>" class="col s10 offset-s1 light-green lighten-4" style="; border-radius: 10px; display: none; margin-top: -7%;">
+					<p><?php echo $registro->Asunto;  ?></p>
+				</div>
 			</div>
 			<?php
 		}
@@ -63,6 +73,12 @@ include "Vistas/pie.php";
 			$('#'+id).hide(300);
 		}else{
 			$('#'+id).show(300);
+		}
+		var esVisible2 = $("#"+id+"1").is(":visible");
+		if (esVisible2==true) {
+			$('#'+id+"1").hide(300);
+		}else{
+			$('#'+id+"1").show(300);
 		}
 	}
 </script>
