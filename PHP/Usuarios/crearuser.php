@@ -17,10 +17,10 @@ if(isset($_POST["botoncu"])){
         $resultado->execute();
         $Cr_Ex=$resultado->rowCount();//Correo existente
         if ($Cr_Ex==0) {
-            $sql="INSERT INTO usuarios (NOMBRE, USUARIO, PASSWORD, EMAIL) VALUES ('$nombre', '$usuario', '$pass', '$email')";
+            $sql="INSERT INTO usuarios (NOMBRE, USUARIO, PASSWORD, EMAIL, Permisos) VALUES ('$nombre', '$usuario', '$pass', '$email','1')";
             $resultado=$base->prepare($sql);
             $resultado->execute();
-
+            
             $sql="SELECT * FROM usuarios WHERE USUARIO='$usuario' AND PASSWORD='$pass'";
             $resultado=$base->prepare($sql);
             $resultado->execute();
