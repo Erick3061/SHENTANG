@@ -37,8 +37,10 @@ session_start();
 			<ul class="right hide-on-med-and-down">
 				<li id="ID_PA"><a href="Administrar_Productos.php">Productos</a></li>
 				<li id="ID_SeA"><a href="Administrar_Servicios.php">Servicios</a></li>
-				<li><a href="TalleresA.php">Talleres</a></li>
-				<li><a href="TerapiasA.php">Terapias</a></li>
+
+				<li id="ID_Ta"><a href="Administrar_Talleres.php">Talleres</a></li>
+				<li id="ID_Te"><a href="Administrar_Terapias.php">Terapias</a></li>
+
 				<li>
 					<a href="#" onclick="cerrar()">Cerrar sesion</a>
 				</li>

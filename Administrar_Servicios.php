@@ -13,7 +13,11 @@ if (isset($_SESSION['user']) and isset( $_SESSION['per'])) {
     </div>  
   </div>
 
+<<<<<<< HEAD
+ 
+=======
 
+>>>>>>> cc978a284f1a8a8d953a7c2cbe6c173b39d4ec6a
   <?php
   include "Vistas/Modal_ser.php";
   include "Vistas/pie_adm.php"; 
